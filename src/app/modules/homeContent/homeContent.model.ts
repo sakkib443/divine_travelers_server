@@ -57,7 +57,7 @@ const homeContentSchema = new Schema<IHomeContent, HomeContentModel>(
             type: String,
             required: true,
             unique: true,
-            enum: ['hero', 'services', 'consultation', 'whyChooseUs', 'noticeBoard'],
+            enum: ['hero', 'services', 'about', 'whyChooseUs', 'noticeBoard'],
         },
         data: { type: Schema.Types.Mixed, required: true },
     },

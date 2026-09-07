@@ -29,6 +29,10 @@ const DEFAULTS: Partial<ISettings> = {
     countriesCount: '50+',
     happyClientsCount: '10K+',
 
+    // Branding
+    logoUrl: '',
+    faviconUrl: '',
+
     social: {
         facebook: 'https://facebook.com/divinetravelers',
         instagram: '',

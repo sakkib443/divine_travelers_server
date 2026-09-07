@@ -48,6 +48,10 @@ const settingsSchema = new Schema<ISettings, SettingsModel>(
         countriesCount: { type: String, default: '50+', trim: true },
         happyClientsCount: { type: String, default: '10K+', trim: true },
 
+        // Branding
+        logoUrl: { type: String, default: '', trim: true },
+        faviconUrl: { type: String, default: '', trim: true },
+
         // Social
         social: { type: socialSchema, default: () => ({}) },
     },

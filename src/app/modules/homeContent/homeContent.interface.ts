@@ -25,6 +25,7 @@ export interface IHeroData {
 
 // Service Item
 export interface IServiceItem {
+    id: string;
     title: IBilingualText;
     subtitle: IBilingualText;
     description: IBilingualText;
@@ -49,22 +50,21 @@ export interface IServicesData {
     isActive: boolean;
 }
 
-// Consultation Section
-export interface IConsultationData {
-    tagText: IBilingualText;
+// About Section
+export interface IAboutFeature {
+    icon: string;
+    value: string;
+    title: IBilingualText;
+    subtitle: IBilingualText;
+    order: number;
+}
+
+export interface IAboutData {
     heading: IBilingualText;
-    headingHighlight: IBilingualText;
-    headingEnd: IBilingualText;
     description: IBilingualText;
-    experienceTitle: IBilingualText;
-    experienceDesc: IBilingualText;
-    experienceImage: string;
-    mainImage1: string;
-    mainImage2: string;
-    ctaText: IBilingualText;
-    ctaLink: string;
-    agentCount: string;
-    agentLabel: IBilingualText;
+    image1: string;
+    image2: string;
+    features: IAboutFeature[];
     isActive: boolean;
 }
 
@@ -109,12 +109,12 @@ export interface INoticeBoardData {
 }
 
 // Section types
-export type SectionName = 'hero' | 'services' | 'consultation' | 'whyChooseUs' | 'noticeBoard';
+export type SectionName = 'hero' | 'services' | 'about' | 'whyChooseUs' | 'noticeBoard';
 
 // Main document
 export interface IHomeContent extends Document {
     section: SectionName;
-    data: IHeroData | IServicesData | IConsultationData | IWhyChooseData | INoticeBoardData;
+    data: IHeroData | IServicesData | IAboutData | IWhyChooseData | INoticeBoardData;
     createdAt: Date;
     updatedAt: Date;
 }

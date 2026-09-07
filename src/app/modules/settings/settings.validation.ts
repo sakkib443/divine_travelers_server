@@ -34,6 +34,10 @@ const updateSettingsSchema = z.object({
         countriesCount: z.string().trim().max(20).optional().or(z.literal('')),
         happyClientsCount: z.string().trim().max(20).optional().or(z.literal('')),
 
+        // Branding
+        logoUrl: z.string().trim().max(2000).optional().or(z.literal('')),
+        faviconUrl: z.string().trim().max(2000).optional().or(z.literal('')),
+
         social: z
             .object({
                 facebook: z.string().trim().max(300).optional().or(z.literal('')),

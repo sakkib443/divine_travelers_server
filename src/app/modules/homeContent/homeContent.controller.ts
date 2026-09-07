@@ -6,7 +6,7 @@ import { Request, Response, NextFunction } from 'express';
 import { HomeContentService } from './homeContent.service';
 import { SectionName } from './homeContent.interface';
 
-const VALID_SECTIONS: SectionName[] = ['hero', 'services', 'consultation', 'whyChooseUs', 'noticeBoard'];
+const VALID_SECTIONS: SectionName[] = ['hero', 'services', 'about', 'whyChooseUs', 'noticeBoard'];
 
 const getAllSections = async (_req: Request, res: Response, next: NextFunction) => {
     try {

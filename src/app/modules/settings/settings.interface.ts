@@ -44,6 +44,10 @@ export interface ISettings extends Document {
     countriesCount: string;   // e.g. "50+"
     happyClientsCount: string; // e.g. "10K+"
 
+    // Branding
+    logoUrl?: string;       // Custom logo image URL
+    faviconUrl?: string;    // Custom favicon image URL
+
     // Social
     social: ISocialLinks;
 

@@ -32,45 +32,64 @@ const DEFAULTS: Record<SectionName, any> = {
         isActive: true,
     },
     services: {
-        tagText: { en: 'OUR SERVICES', bn: 'আমাদের সেবা' },
-        heading: { en: 'WHAT WE', bn: 'আমরা যা' },
-        headingHighlight: { en: 'OFFER', bn: 'অফার করি' },
-        description: { en: 'Comprehensive travel and immigration solutions tailored to your needs', bn: 'আপনার প্রয়োজন অনুযায়ী সম্পূর্ণ ভ্রমণ ও ইমিগ্রেশন সমাধান' },
+        tagText: { en: 'Our Services', bn: 'আমাদের সেবা' },
+        heading: { en: 'Everything You Need for', bn: 'আপনার স্বপ্নের যাত্রার জন্য' },
+        headingHighlight: { en: 'Your Journey', bn: 'সেরা সেবা' },
+        description: { 
+            en: 'From curated tour packages to Hajj, Umrah, and flight bookings — Divine Travelers covers every step of your journey with trusted expertise.', 
+            bn: 'ট্যুর প্যাকেজ থেকে শুরু করে হজ্জ, উমরাহ ও ফ্লাইট বুকিং — Divine Travelers-এ আপনার প্রতিটি ভ্রমণের প্রয়োজন পূরণ করা হয় বিশ্বস্ততার সাথে।' 
+        },
         items: [
             {
-                title: { en: 'Flight Booking', bn: 'ফ্লাইট বুকিং' },
-                subtitle: { en: 'Air Travel', bn: 'বিমান ভ্রমণ' },
-                description: { en: 'Best deals on domestic and international flights', bn: 'দেশি ও আন্তর্জাতিক ফ্লাইটে সেরা ডিল' },
-                icon: 'LuPlane',
-                image: 'https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&w=800',
-                color: '#EF8C2C',
-                stats: { en: '5K+ Booked', bn: '৫K+ বুকড' },
-                href: '/contact',
+                id: 'tour',
+                title: { en: 'Tour Packages', bn: 'ট্যুর প্যাকেজ' },
+                subtitle: { en: '', bn: '' },
+                description: { en: '', bn: '' },
+                icon: '',
+                image: '/images/tour-service.jpg',
+                color: '#E64266',
+                stats: { en: '', bn: '' },
+                href: '/tour',
+                order: 1,
+                isActive: true,
+            },
+            {
+                id: 'hajj',
+                title: { en: 'Hajj', bn: 'হজ্জ' },
+                subtitle: { en: '', bn: '' },
+                description: { en: '', bn: '' },
+                icon: '',
+                image: '/images/hajj-service.jpg',
+                color: '#F59E0B',
+                stats: { en: '', bn: '' },
+                href: '/hajj-umrah?type=hajj',
                 order: 2,
                 isActive: true,
             },
             {
-                title: { en: 'Tour Packages', bn: 'ট্যুর প্যাকেজ' },
-                subtitle: { en: 'Adventure', bn: 'অ্যাডভেঞ্চার' },
-                description: { en: 'Curated tour packages for unforgettable travel experiences', bn: 'অবিস্মরণীয় ভ্রমণ অভিজ্ঞতার জন্য পরিকল্পিত ট্যুর প্যাকেজ' },
-                icon: 'LuMapPin',
-                image: 'https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=800',
-                color: '#8B5CF6',
-                stats: { en: '500+ Tours', bn: '৫০০+ ট্যুর' },
-                href: '/tour',
-                order: 4,
+                id: 'umrah',
+                title: { en: 'Umrah', bn: 'উমরাহ' },
+                subtitle: { en: '', bn: '' },
+                description: { en: '', bn: '' },
+                icon: '',
+                image: '/images/ummrah-service.jpg',
+                color: '#10B981',
+                stats: { en: '', bn: '' },
+                href: '/hajj-umrah?type=umrah',
+                order: 3,
                 isActive: true,
             },
             {
-                title: { en: 'Hajj & Umrah', bn: 'হজ্জ ও উমরাহ' },
-                subtitle: { en: 'Pilgrimage', bn: 'তীর্থযাত্রা' },
-                description: { en: 'Complete Hajj and Umrah packages with guided services', bn: 'গাইডেড সেবাসহ সম্পূর্ণ হজ্জ ও উমরাহ প্যাকেজ' },
-                icon: 'LuMoon',
-                image: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800&fit=crop',
-                color: '#F59E0B',
-                stats: { en: '1K+ Pilgrims', bn: '১K+ হাজী' },
-                href: '/hajj-umrah',
-                order: 5,
+                id: 'flight',
+                title: { en: 'Flight', bn: 'ফ্লাইট' },
+                subtitle: { en: '', bn: '' },
+                description: { en: '', bn: '' },
+                icon: '',
+                image: '/images/flight-service.jpg',
+                color: '#3B82F6',
+                stats: { en: '', bn: '' },
+                href: '/flight',
+                order: 4,
                 isActive: true,
             },
         ],
@@ -78,21 +97,15 @@ const DEFAULTS: Record<SectionName, any> = {
         bottomCTALink: '/contact',
         isActive: true,
     },
-    consultation: {
-        tagText: { en: 'IMMIGRATION CONSULTING', bn: 'ইমিগ্রেশন কনসাল্টিং' },
-        heading: { en: 'EXPERT IMMIGRATION', bn: 'বিশেষজ্ঞ ইমিগ্রেশন' },
-        headingHighlight: { en: 'CONSULTING', bn: 'কনসাল্টিং' },
-        headingEnd: { en: 'SERVICE', bn: 'সেবা' },
-        description: { en: 'Get professional guidance from our experienced travel consultants for a smooth journey.', bn: 'মসৃণ ভ্রমণের জন্য আমাদের অভিজ্ঞ ট্রাভেল পরামর্শদাতাদের কাছ থেকে পেশাদার নির্দেশনা পান।' },
-        experienceTitle: { en: '10+ Years Of Experience', bn: '১০+ বছরের অভিজ্ঞতা' },
-        experienceDesc: { en: 'Our team of experts has over a decade of experience in immigration consulting, ensuring you get the best guidance.', bn: 'আমাদের বিশেষজ্ঞ দল ইমিগ্রেশন কনসাল্টিং এ এক দশকেরও বেশি অভিজ্ঞতা রাখে।' },
-        experienceImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=200&h=200&fit=crop',
-        mainImage1: '/images/img01.png',
-        mainImage2: '/images/img02.png',
-        ctaText: { en: 'Explore More', bn: 'আরও জানুন' },
-        ctaLink: '/contact',
-        agentCount: '200+',
-        agentLabel: { en: 'Real Agents', bn: 'এজেন্ট' },
+    about: {
+        heading: { en: 'Divine Travelers is the best way to find travel tours. Let\'s make the most memorable adventures.', bn: 'ডিভাইন ট্রাভেলার্স হলো ট্যুর খুঁজে পাওয়ার সেরা উপায়। চলুন সবচেয়ে স্মরণীয় অ্যাডভেঞ্চার তৈরি করি।' },
+        description: { en: 'Divine Travelers is an incredible way to have an adventurous outdoor experience of world renowned destinations while traveling with comfort and sleeping soundly in the best accommodations.', bn: 'ডিভাইন ট্রাভেলার্স হলো বিশ্ববিখ্যাত গন্তব্যগুলোতে আরামদায়ক ভ্রমণ এবং সেরা আবাসনে নিশ্চিন্তে রাত্রিযাপন করার মাধ্যমে একটি রোমাঞ্চকর আউটডোর অভিজ্ঞতা অর্জনের অবিশ্বাস্য উপায়।' },
+        image1: '/hero.jpg',
+        image2: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80',
+        features: [
+            { icon: 'LuGlobe', value: '2018', title: { en: 'The First Trip We Operated', bn: 'প্রথম ট্রিপ যা আমরা পরিচালনা করেছি' }, subtitle: { en: 'We are in this industry for more than 6 years!', bn: 'আমরা ৬ বছরেরও বেশি সময় ধরে এই শিল্পে আছি!' }, order: 1 },
+            { icon: 'LuMap', value: '50+', title: { en: 'Locations Worldwide', bn: 'বিশ্বব্যাপী গন্তব্য' }, subtitle: { en: 'With more than 50 locations for your choices', bn: 'আপনার পছন্দের জন্য ৫০টিরও বেশি গন্তব্য' }, order: 2 }
+        ],
         isActive: true,
     },
     whyChooseUs: {
@@ -139,13 +152,14 @@ const DEFAULTS: Record<SectionName, any> = {
 // raw request body, we copy ONLY the fields defined in each section's schema.
 
 const SERVICE_ITEM_FIELDS = [
-    'title', 'subtitle', 'description', 'icon', 'image', 'color', 'stats', 'href', 'order', 'isActive',
+    'id', 'title', 'subtitle', 'description', 'icon', 'image', 'color', 'stats', 'href', 'order', 'isActive',
 ] as const;
 
 const WHY_CHOOSE_CARD_FIELDS = ['title', 'description', 'icon', 'color', 'order'] as const;
 
 const STAT_ITEM_FIELDS = ['value', 'label', 'color', 'order'] as const;
 const NOTICE_ITEM_FIELDS = ['en', 'bn'] as const;
+const ABOUT_FEATURE_FIELDS = ['icon', 'value', 'title', 'subtitle', 'order'] as const;
 
 // One background picture behind the hero
 const HERO_SLIDE_FIELDS = ['image', 'order'] as const;
@@ -167,10 +181,8 @@ const SECTION_FIELDS: Record<SectionName, readonly string[]> = {
         'tagText', 'heading', 'headingHighlight', 'description', 'items',
         'bottomCTAText', 'bottomCTALink', 'isActive',
     ],
-    consultation: [
-        'tagText', 'heading', 'headingHighlight', 'headingEnd', 'description',
-        'experienceTitle', 'experienceDesc', 'experienceImage', 'mainImage1',
-        'mainImage2', 'ctaText', 'ctaLink', 'agentCount', 'agentLabel', 'isActive',
+    about: [
+        'heading', 'description', 'image1', 'image2', 'features', 'isActive',
     ],
     whyChooseUs: [
         'tagText', 'heading', 'headingHighlight', 'description', 'cards', 'stats', 'isActive',
@@ -217,6 +229,9 @@ const sanitizeSectionData = (section: SectionName, input: any): Record<string, a
     }
     if (section === 'services' && data.items !== undefined) {
         data.items = pickItems(data.items, SERVICE_ITEM_FIELDS);
+    }
+    if (section === 'about' && data.features !== undefined) {
+        data.features = pickItems(data.features, ABOUT_FEATURE_FIELDS);
     }
     if (section === 'whyChooseUs') {
         if (data.cards !== undefined) data.cards = pickItems(data.cards, WHY_CHOOSE_CARD_FIELDS);
