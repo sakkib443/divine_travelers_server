@@ -97,7 +97,7 @@ RULES:
 
 
 // POST /api/pdf-extract (admin only)
-router.post('/', authMiddleware, authorizeRoles('admin'), upload.single('pdf'), async (req: any, res: any) => {
+router.post('/', authMiddleware, authorizeRoles('admin', 'manager'), upload.single('pdf'), async (req: any, res: any) => {
     try {
         const file = req.file;
         if (!file) {

@@ -10,7 +10,7 @@ import AppError from '../utils/AppError';
 import { User } from '../modules/user/user.model';
 
 // Role types - admin only (superadmin from .env also carries the 'admin' role)
-type TRole = 'admin';
+type TRole = 'admin' | 'manager';
 
 /**
  * Extended Request interface with user data

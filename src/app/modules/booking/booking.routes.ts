@@ -18,16 +18,16 @@ router.post(
 router.get('/track', BookingController.trackBooking);
 
 // ── Admin: bell + sidebar badge — pending bookings (count + latest items)
-router.get('/notifications', authMiddleware, authorizeRoles('admin'), BookingController.getNotifications);
+router.get('/notifications', authMiddleware, authorizeRoles('admin', 'manager'), BookingController.getNotifications);
 
 // ── Admin: all bookings (filter by ?type=tour&status=pending)
-router.get('/', authMiddleware, authorizeRoles('admin'), BookingController.getAllBookings);
+router.get('/', authMiddleware, authorizeRoles('admin', 'manager'), BookingController.getAllBookings);
 
 // ── Admin: update status
 router.patch(
     '/:id/status',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     BookingController.updateStatus
 );
 
@@ -35,7 +35,7 @@ router.patch(
 router.patch(
     '/:id/documents',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     BookingController.setDocuments
 );
 
@@ -43,20 +43,20 @@ router.patch(
 router.post(
     '/:id/remarks',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     BookingController.addRemark
 );
 
 // ── Admin: set total amount
-router.patch('/:id/amount', authMiddleware, authorizeRoles('admin'), BookingController.setAmount);
+router.patch('/:id/amount', authMiddleware, authorizeRoles('admin', 'manager'), BookingController.setAmount);
 
 // ── Admin: record a manual/office payment
-router.post('/:id/payments', authMiddleware, authorizeRoles('admin'), BookingController.addPayment);
+router.post('/:id/payments', authMiddleware, authorizeRoles('admin', 'manager'), BookingController.addPayment);
 
 // ── Invoice PDF download (admin)
-router.get('/:id/invoice', authMiddleware, authorizeRoles('admin'), BookingController.downloadInvoice);
+router.get('/:id/invoice', authMiddleware, authorizeRoles('admin', 'manager'), BookingController.downloadInvoice);
 
 // ── Admin: delete
-router.delete('/:id', authMiddleware, authorizeRoles('admin'), BookingController.deleteBooking);
+router.delete('/:id', authMiddleware, authorizeRoles('admin', 'manager'), BookingController.deleteBooking);
 
 export const BookingRoutes = router;

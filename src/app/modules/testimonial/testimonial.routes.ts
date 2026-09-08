@@ -28,7 +28,7 @@ router.post(
 router.get(
     '/',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     TestimonialController.getAllTestimonials
 );
 
@@ -36,7 +36,7 @@ router.get(
 router.get(
     '/:id',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     TestimonialController.getTestimonialById
 );
 
@@ -44,7 +44,7 @@ router.get(
 router.patch(
     '/:id',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     validateRequest(TestimonialValidation.updateTestimonialSchema),
     TestimonialController.updateTestimonial
 );
@@ -53,7 +53,7 @@ router.patch(
 router.delete(
     '/:id',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     TestimonialController.deleteTestimonial
 );
 

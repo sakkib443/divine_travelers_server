@@ -52,7 +52,7 @@ router.get(
 router.post(
     '/',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     validateRequest(TourValidation.createTourSchema),
     TourController.createTour
 );
@@ -61,7 +61,7 @@ router.post(
 router.patch(
     '/:id',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     validateRequest(TourValidation.updateTourSchema),
     TourController.updateTour
 );
@@ -70,7 +70,7 @@ router.patch(
 router.delete(
     '/:id',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     TourController.deleteTour
 );
 

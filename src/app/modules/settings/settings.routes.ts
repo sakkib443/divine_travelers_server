@@ -17,7 +17,7 @@ router.get('/', SettingsController.getSettings);
 router.patch(
     '/',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     validateRequest(SettingsValidation.updateSettingsSchema),
     SettingsController.updateSettings
 );

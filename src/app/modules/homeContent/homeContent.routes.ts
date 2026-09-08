@@ -18,7 +18,7 @@ router.get('/:section', HomeContentController.getSection);
 router.put(
     '/:section',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     validateRequest(HomeContentValidation.updateSectionSchema),
     HomeContentController.updateSection
 );
@@ -27,7 +27,7 @@ router.put(
 router.post(
     '/seed',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     HomeContentController.seedDefaults
 );
 

@@ -34,10 +34,10 @@ router.post('/avatar', authMiddleware, uploadUserAvatar);
 router.post('/document', authMiddleware, uploadDocument);
 
 // Category icon upload (admin only)
-router.post('/category', authMiddleware, authorizeRoles('admin'), uploadCategoryImage);
+router.post('/category', authMiddleware, authorizeRoles('admin', 'manager'), uploadCategoryImage);
 
 // Platform icon upload (admin only)
-router.post('/platform', authMiddleware, authorizeRoles('admin'), uploadPlatformImage);
+router.post('/platform', authMiddleware, authorizeRoles('admin', 'manager'), uploadPlatformImage);
 
 // Software screenshots upload
 router.post('/software', authMiddleware, uploadSoftwareScreenshots);
@@ -46,7 +46,7 @@ router.post('/software', authMiddleware, uploadSoftwareScreenshots);
 router.post('/file', authMiddleware, uploadZipFile);
 
 // Delete image/file (admin only)
-router.delete('/delete', authMiddleware, authorizeRoles('admin'), removeImage);
+router.delete('/delete', authMiddleware, authorizeRoles('admin', 'manager'), removeImage);
 
 export const uploadRoutes = router;
 

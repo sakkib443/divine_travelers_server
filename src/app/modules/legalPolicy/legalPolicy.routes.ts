@@ -18,7 +18,7 @@ router.get('/:type', LegalPolicyController.getPolicy);
 router.put(
     '/:type',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     validateRequest(LegalPolicyValidation.updatePolicySchema),
     LegalPolicyController.updatePolicy
 );
@@ -27,7 +27,7 @@ router.put(
 router.post(
     '/seed',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     LegalPolicyController.seedDefaults
 );
 

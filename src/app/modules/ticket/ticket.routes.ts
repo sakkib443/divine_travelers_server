@@ -14,7 +14,7 @@ const router = express.Router();
 // ড্যাশবোর্ড থেকে টোকেনসহ আসে, তাই এতে কিছু ভাঙে না।
 
 // GET all tickets (sorted by latest)
-router.get('/', authMiddleware, authorizeRoles('admin'), async (_req: Request, res: Response, next: NextFunction) => {
+router.get('/', authMiddleware, authorizeRoles('admin', 'manager'), async (_req: Request, res: Response, next: NextFunction) => {
     try {
         const tickets = await Ticket.find().sort({ createdAt: -1 }).lean();
         res.json({ success: true, data: tickets });
@@ -24,7 +24,7 @@ router.get('/', authMiddleware, authorizeRoles('admin'), async (_req: Request, r
 });
 
 // GET single ticket by ID
-router.get('/:id', authMiddleware, authorizeRoles('admin'), async (req: Request, res: Response, next: NextFunction) => {
+router.get('/:id', authMiddleware, authorizeRoles('admin', 'manager'), async (req: Request, res: Response, next: NextFunction) => {
     try {
         const ticket = await Ticket.findById(req.params.id).lean();
         if (!ticket) return res.status(404).json({ success: false, message: 'Ticket not found' });
@@ -38,7 +38,7 @@ router.get('/:id', authMiddleware, authorizeRoles('admin'), async (req: Request,
 router.post(
     '/',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     validateRequest(TicketValidation.createTicketSchema),
     async (req: Request, res: Response, next: NextFunction) => {
         try {
@@ -54,7 +54,7 @@ router.post(
 router.put(
     '/:id',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     validateRequest(TicketValidation.updateTicketSchema),
     async (req: Request, res: Response, next: NextFunction) => {
         try {
@@ -71,7 +71,7 @@ router.put(
 router.delete(
     '/:id',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     async (req: Request, res: Response, next: NextFunction) => {
         try {
             const ticket = await Ticket.findByIdAndDelete(req.params.id);

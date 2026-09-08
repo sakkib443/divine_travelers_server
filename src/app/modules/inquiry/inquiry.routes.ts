@@ -15,21 +15,21 @@ const router = express.Router();
 router.post('/', validateRequest(createInquiryValidation), InquiryController.createInquiry);
 
 // ── Admin: aggregate counts by service + status (before '/:id')
-router.get('/stats', authMiddleware, authorizeRoles('admin'), InquiryController.getStats);
+router.get('/stats', authMiddleware, authorizeRoles('admin', 'manager'), InquiryController.getStats);
 
 // ── Admin: paginated queue with filters + search
-router.get('/', authMiddleware, authorizeRoles('admin'), InquiryController.getAllInquiries);
+router.get('/', authMiddleware, authorizeRoles('admin', 'manager'), InquiryController.getAllInquiries);
 
 // ── Admin: inline status / note update
 router.patch(
     '/:id',
     authMiddleware,
-    authorizeRoles('admin'),
+    authorizeRoles('admin', 'manager'),
     validateRequest(updateInquiryValidation),
     InquiryController.updateInquiry
 );
 
 // ── Admin: delete
-router.delete('/:id', authMiddleware, authorizeRoles('admin'), InquiryController.deleteInquiry);
+router.delete('/:id', authMiddleware, authorizeRoles('admin', 'manager'), InquiryController.deleteInquiry);
 
 export const InquiryRoutes = router;

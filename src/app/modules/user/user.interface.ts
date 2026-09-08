@@ -8,9 +8,10 @@ import { Model, Types } from 'mongoose';
 /**
  * User Role Types
  * admin - System administrator with full access
+ * manager - Manager with restricted access
  * (superadmin logs in from .env and also carries the 'admin' role)
  */
-export type TUserRole = 'admin';
+export type TUserRole = 'admin' | 'manager';
 
 /**
  * User Status Types
