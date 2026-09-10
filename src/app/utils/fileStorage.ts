@@ -192,7 +192,14 @@ export type SavedFile = {
  * একটি ছবি প্রসেস করে ডিস্কে লেখে এবং relative URL ফেরত দেয়।
  * GIF অ্যানিমেশন হারাতে পারে বলে GIF যেমন আছে তেমনই রাখা হয়।
  */
-export const saveImage = async (file: Express.Multer.File, folder: string): Promise<SavedFile> => {
+// opts.trim → sharp দিয়ে চারপাশের একরঙা/স্বচ্ছ ফাঁকা বর্ডার কেটে ফেলে।
+// লোগো আপলোডে ব্যবহার হয়: অনেক লোগো ফাইলে ভিতরে বড় প্যাডিং থাকে, ফলে
+// একই CSS উচ্চতায় আসল মার্কটা ছোট দেখায়। trim করলে img পুরো জায়গা জুড়ে বসে।
+export const saveImage = async (
+    file: Express.Multer.File,
+    folder: string,
+    opts: { trim?: boolean } = {},
+): Promise<SavedFile> => {
     const dir = path.join(UPLOAD_DIR, folder);
     await ensureDir(dir);
 
@@ -203,9 +210,16 @@ export const saveImage = async (file: Express.Multer.File, folder: string): Prom
     if (isGif) {
         await fs.writeFile(dest, file.buffer);
     } else {
-        await sharp(file.buffer)
+        let pipeline = sharp(file.buffer)
             // মোবাইলে তোলা ছবির EXIF orientation ঠিক করে (নাহলে উল্টো দেখায়)।
-            .rotate()
+            .rotate();
+
+        if (opts.trim) {
+            // চারপাশের ফাঁকা বর্ডার কেটে ফেলে (top-left pixel-এর রঙের ভিত্তিতে)।
+            pipeline = pipeline.trim();
+        }
+
+        await pipeline
             .resize({
                 width: MAX_IMAGE_DIMENSION,
                 height: MAX_IMAGE_DIMENSION,

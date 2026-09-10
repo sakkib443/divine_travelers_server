@@ -73,7 +73,9 @@ const noFile = (res: Response, message: string) => {
 export const uploadImage = withUpload(uploadSingleImage, 'Image upload', async (req, res) => {
     if (!req.file) return noFile(res, 'No image file provided');
 
-    const saved = await saveImage(req.file, 'general');
+    // ?trim=true → লোগোর মতো ছবিতে চারপাশের ফাঁকা বর্ডার কেটে ফেলা হয়।
+    const trim = req.query.trim === 'true';
+    const saved = await saveImage(req.file, 'general', { trim });
 
     res.status(200).json({
         success: true,
