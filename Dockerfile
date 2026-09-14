@@ -57,6 +57,11 @@ COPY --from=builder --chown=node:node /app/package.json ./package.json
 # Running it anywhere else would leave the DB pointing at files that don't exist here.
 COPY --from=builder --chown=node:node /app/migrate-cloudinary-to-local.js ./migrate-cloudinary-to-local.js
 
+# One-off brand-spelling migration (Travelers -> Travellers) for admin-entered
+# DB content. Run once from the Coolify terminal: `node fix-travellers.js`.
+# Idempotent and safe to re-run.
+COPY --from=builder --chown=node:node /app/fix-travellers.js ./fix-travellers.js
+
 # Uploads live here and MUST be backed by a persistent volume in Coolify
 # (Storages -> /app/uploads), otherwise every redeploy wipes user images.
 #
