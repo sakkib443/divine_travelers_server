@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers LMS - Auth Interface
+// Divine Travellers LMS - Auth Interface
 // Authentication related TypeScript types
 // ===================================================================
 

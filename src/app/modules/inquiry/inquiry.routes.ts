@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Inquiry Routes
+// Divine Travellers Backend - Inquiry Routes
 // Public create + admin-only queue management.
 // ===================================================================
 

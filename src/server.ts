@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Server Entry Point
+// Divine Travellers - Server Entry Point
 // সার্ভার শুরু করার মূল ফাইল - MongoDB connect এবং server start
 // ===================================================================
 
@@ -56,7 +56,7 @@ async function bootstrap() {
       console.log('');
       console.log('╔══════════════════════════════════════════════╗');
       console.log('║                                              ║');
-      console.log('║   🛂 Divine Travelers API Server Started!              ║');
+      console.log('║   🛂 Divine Travellers API Server Started!              ║');
       console.log('║                                              ║');
       console.log(`║   🌐 URL: http://localhost:${config.port}               ║`);
       console.log(`║   🔧 Environment: ${config.env.padEnd(21)}   ║`);

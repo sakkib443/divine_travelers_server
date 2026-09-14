@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Upload Routes
+// Divine Travellers Backend - Upload Routes
 // Routes for all image upload operations
 // ===================================================================
 

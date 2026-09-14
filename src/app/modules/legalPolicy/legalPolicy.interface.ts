@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Legal Policy Interface
+// Divine Travellers - Legal Policy Interface
 // Privacy Policy ও Refund & Cancellation Policy — admin dashboard থেকে manage হবে
 // ===================================================================
 

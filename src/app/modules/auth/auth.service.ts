@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers LMS - Auth Service
+// Divine Travellers LMS - Auth Service
 // Authentication business logic (login, register, token management)
 // ===================================================================
 

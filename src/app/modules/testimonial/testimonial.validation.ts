@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Testimonial Validation (Zod)
+// Divine Travellers - Testimonial Validation (Zod)
 // ===================================================================
 
 import { z } from 'zod';

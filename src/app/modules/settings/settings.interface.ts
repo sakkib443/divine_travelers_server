@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Contact & Social Settings Interface (singleton)
+// Divine Travellers - Contact & Social Settings Interface (singleton)
 // সাইটের সব contact info + social link admin dashboard থেকে control হবে
 // ===================================================================
 

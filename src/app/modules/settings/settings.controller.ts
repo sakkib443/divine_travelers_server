@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Settings Controller
+// Divine Travellers - Settings Controller
 // ===================================================================
 
 import { Request, Response, NextFunction } from 'express';

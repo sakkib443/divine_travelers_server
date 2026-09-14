@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Home Content Service
+// Divine Travellers - Home Content Service
 // CRUD for homepage section content — section-based singleton documents
 // ===================================================================
 
@@ -11,7 +11,7 @@ import { IHomeContent, SectionName } from './homeContent.interface';
 const DEFAULTS: Record<SectionName, any> = {
     hero: {
         badgeText: { en: 'Open: Sat–Thu | 9:30am–8:30pm', bn: 'খোলা: শনি–বৃহঃ | সকাল ৯:৩০–রাত ৮:৩০' },
-        heading: { en: 'YOUR JOURNEY STARTS WITH DIVINE TRAVELERS', bn: 'আপনার যাত্রা শুরু হোক Divine Travelers দিয়ে' },
+        heading: { en: 'YOUR JOURNEY STARTS WITH DIVINE TRAVELLERS', bn: 'আপনার যাত্রা শুরু হোক Divine Travellers দিয়ে' },
         ctaButton1Text: { en: 'Contact for booking', bn: 'বুকিং এর জন্য যোগাযোগ' },
         ctaButton1Link: '/contact',
         ctaButton2Text: { en: 'Ask a question', bn: 'প্রশ্ন করুন' },
@@ -36,8 +36,8 @@ const DEFAULTS: Record<SectionName, any> = {
         heading: { en: 'Everything You Need for', bn: 'আপনার স্বপ্নের যাত্রার জন্য' },
         headingHighlight: { en: 'Your Journey', bn: 'সেরা সেবা' },
         description: { 
-            en: 'From curated tour packages to Hajj, Umrah, and flight bookings — Divine Travelers covers every step of your journey with trusted expertise.', 
-            bn: 'ট্যুর প্যাকেজ থেকে শুরু করে হজ্জ, উমরাহ ও ফ্লাইট বুকিং — Divine Travelers-এ আপনার প্রতিটি ভ্রমণের প্রয়োজন পূরণ করা হয় বিশ্বস্ততার সাথে।' 
+            en: 'From curated tour packages to Hajj, Umrah, and flight bookings — Divine Travellers covers every step of your journey with trusted expertise.', 
+            bn: 'ট্যুর প্যাকেজ থেকে শুরু করে হজ্জ, উমরাহ ও ফ্লাইট বুকিং — Divine Travellers-এ আপনার প্রতিটি ভ্রমণের প্রয়োজন পূরণ করা হয় বিশ্বস্ততার সাথে।' 
         },
         items: [
             {
@@ -98,8 +98,8 @@ const DEFAULTS: Record<SectionName, any> = {
         isActive: true,
     },
     about: {
-        heading: { en: 'Divine Travelers is the best way to find travel tours. Let\'s make the most memorable adventures.', bn: 'ডিভাইন ট্রাভেলার্স হলো ট্যুর খুঁজে পাওয়ার সেরা উপায়। চলুন সবচেয়ে স্মরণীয় অ্যাডভেঞ্চার তৈরি করি।' },
-        description: { en: 'Divine Travelers is an incredible way to have an adventurous outdoor experience of world renowned destinations while traveling with comfort and sleeping soundly in the best accommodations.', bn: 'ডিভাইন ট্রাভেলার্স হলো বিশ্ববিখ্যাত গন্তব্যগুলোতে আরামদায়ক ভ্রমণ এবং সেরা আবাসনে নিশ্চিন্তে রাত্রিযাপন করার মাধ্যমে একটি রোমাঞ্চকর আউটডোর অভিজ্ঞতা অর্জনের অবিশ্বাস্য উপায়।' },
+        heading: { en: 'Divine Travellers is the best way to find travel tours. Let\'s make the most memorable adventures.', bn: 'ডিভাইন ট্রাভেলার্স হলো ট্যুর খুঁজে পাওয়ার সেরা উপায়। চলুন সবচেয়ে স্মরণীয় অ্যাডভেঞ্চার তৈরি করি।' },
+        description: { en: 'Divine Travellers is an incredible way to have an adventurous outdoor experience of world renowned destinations while traveling with comfort and sleeping soundly in the best accommodations.', bn: 'ডিভাইন ট্রাভেলার্স হলো বিশ্ববিখ্যাত গন্তব্যগুলোতে আরামদায়ক ভ্রমণ এবং সেরা আবাসনে নিশ্চিন্তে রাত্রিযাপন করার মাধ্যমে একটি রোমাঞ্চকর আউটডোর অভিজ্ঞতা অর্জনের অবিশ্বাস্য উপায়।' },
         image1: '/hero.jpg',
         image2: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80',
         features: [
@@ -109,7 +109,7 @@ const DEFAULTS: Record<SectionName, any> = {
         isActive: true,
     },
     whyChooseUs: {
-        tagText: { en: 'WHY DIVINE TRAVELERS', bn: 'কেন ডিভাইন ট্রাভেলার্স' },
+        tagText: { en: 'WHY DIVINE TRAVELLERS', bn: 'কেন ডিভাইন ট্রাভেলার্স' },
         heading: { en: 'WHY CHOOSE', bn: 'কেন বাছবেন' },
         headingHighlight: { en: 'US', bn: 'আমাদের' },
         description: { en: 'We provide comprehensive immigration and travel services with a proven track record of success.', bn: 'আমরা সফলতার প্রমাণিত ট্র্যাক রেকর্ড সহ ব্যাপক ইমিগ্রেশন ও ভ্রমণ সেবা প্রদান করি।' },
@@ -131,7 +131,7 @@ const DEFAULTS: Record<SectionName, any> = {
         isActive: true,
         notices: [
             {
-                en: "Welcome to Divine Travelers! Enjoy a 10% discount on all Hajj packages booked this month.",
+                en: "Welcome to Divine Travellers! Enjoy a 10% discount on all Hajj packages booked this month.",
                 bn: "ডিভাইন ট্রাভেলার্সে আপনাকে স্বাগতম! এই মাসে বুক করা সকল হজ প্যাকেজে ১০% ছাড় উপভোগ করুন।"
             },
             {

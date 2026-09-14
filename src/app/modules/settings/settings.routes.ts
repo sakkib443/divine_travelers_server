@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Settings Routes
+// Divine Travellers - Settings Routes
 // ===================================================================
 
 import express from 'express';

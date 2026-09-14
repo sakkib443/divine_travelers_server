@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Contact & Social Settings Model (singleton document)
+// Divine Travellers - Contact & Social Settings Model (singleton document)
 // ===================================================================
 
 import { Schema, model } from 'mongoose';

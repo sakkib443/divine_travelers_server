@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Auth Controller
+// Divine Travellers Backend - Auth Controller
 // HTTP Request handling for Authentication
 // ===================================================================
 

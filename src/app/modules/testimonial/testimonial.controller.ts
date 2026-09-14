@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Testimonial Controller
+// Divine Travellers - Testimonial Controller
 // টেস্টিমোনিয়াল মডিউলের HTTP request handlers
 // ===================================================================
 

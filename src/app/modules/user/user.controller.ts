@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - User Controller
+// Divine Travellers Backend - User Controller
 // HTTP Request handling for User module
 // ===================================================================
 

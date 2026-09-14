@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Inquiry Controller
+// Divine Travellers Backend - Inquiry Controller
 // ===================================================================
 
 import { Request, Response } from 'express';

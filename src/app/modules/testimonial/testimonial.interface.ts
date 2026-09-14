@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Testimonial Interface
+// Divine Travellers - Testimonial Interface
 // টেস্টিমোনিয়াল মডিউলের TypeScript interfaces
 // ===================================================================
 

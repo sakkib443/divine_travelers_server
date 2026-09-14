@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Inquiry Model
+// Divine Travellers Backend - Inquiry Model
 // Generic service-inquiry collection: flight is just one `service`
 // value — future services (tour, hajj…) reuse the same table.
 // ===================================================================

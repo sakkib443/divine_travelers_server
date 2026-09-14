@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers LMS - Auth Validation
+// Divine Travellers LMS - Auth Validation
 // Zod validation schemas for authentication
 // ===================================================================
 

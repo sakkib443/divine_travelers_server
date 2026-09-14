@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Tour Controller
+// Divine Travellers - Tour Controller
 // HTTP request handlers for Tour module
 // ট্যুর মডিউলের HTTP রিকোয়েস্ট হ্যান্ডলার
 // ===================================================================

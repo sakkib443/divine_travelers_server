@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - User Routes
+// Divine Travellers Backend - User Routes
 // API endpoints for User module
 // ===================================================================
 

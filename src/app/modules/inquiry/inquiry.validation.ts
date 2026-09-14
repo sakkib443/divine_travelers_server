@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Inquiry Validation (zod)
+// Divine Travellers Backend - Inquiry Validation (zod)
 // ===================================================================
 
 import { z } from 'zod';

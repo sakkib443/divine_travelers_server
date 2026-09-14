@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Auth Routes
+// Divine Travellers Backend - Auth Routes
 // API endpoints for Authentication
 // ===================================================================
 

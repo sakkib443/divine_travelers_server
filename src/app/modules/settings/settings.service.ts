@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Settings Service
+// Divine Travellers - Settings Service
 // Singleton: শুধু একটাই document থাকবে — find করে না পেলে create করবে
 // ===================================================================
 
@@ -34,7 +34,7 @@ const DEFAULTS: Partial<ISettings> = {
     faviconUrl: '',
 
     social: {
-        facebook: 'https://facebook.com/divinetravelers',
+        facebook: 'https://facebook.com/divinetravellers',
         instagram: '',
         twitter: '',
         youtube: '',

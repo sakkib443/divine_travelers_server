@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Inquiry Service
+// Divine Travellers Backend - Inquiry Service
 // ===================================================================
 
 import { Inquiry, IInquiry } from './inquiry.model';

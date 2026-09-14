@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Home Content Model
+// Divine Travellers - Home Content Model
 // Section-based documents: প্রতিটি সেকশনের জন্য আলাদা document
 // ===================================================================
 

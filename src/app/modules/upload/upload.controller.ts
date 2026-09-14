@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Upload Controller
+// Divine Travellers Backend - Upload Controller
 // Handle all image upload operations
 //
 // ফাইল এখন নিজের হোস্টিংয়ে জমা হয় (utils/fileStorage)। response shape

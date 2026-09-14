@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Settings Validation (Zod)
+// Divine Travellers - Settings Validation (Zod)
 // ===================================================================
 
 import { z } from 'zod';

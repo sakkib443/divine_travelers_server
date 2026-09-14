@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - User Model
+// Divine Travellers - User Model
 // MongoDB User Schema with Mongoose - Seller Permissions Enabled
 // ===================================================================
 

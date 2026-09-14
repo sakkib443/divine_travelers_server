@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Home Content Interface
+// Divine Travellers - Home Content Interface
 // হোম পেজের প্রতিটি সেকশনের content admin dashboard থেকে manage হবে
 // ===================================================================
 

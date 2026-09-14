@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Analytics Routes
+// Divine Travellers - Analytics Routes
 // ===================================================================
 
 import express from 'express';

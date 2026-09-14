@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Legal Policy Service
+// Divine Travellers - Legal Policy Service
 // CRUD for Privacy & Refund policies — type-based singleton documents
 // ===================================================================
 
@@ -14,7 +14,7 @@ const DEFAULTS: Record<PolicyType, { title: { en: string; bn: string }; content:
         content: {
             en: `
 <h2>1. Introduction</h2>
-<p>At Divine Travelers ("Divine Travelers", "we", "us", "our"), your privacy is important to us. This Privacy Policy explains how we collect, use, store and protect your personal information when you use our website and services, including air ticketing, tour packages and Hajj &amp; Umrah services.</p>
+<p>At Divine Travellers ("Divine Travellers", "we", "us", "our"), your privacy is important to us. This Privacy Policy explains how we collect, use, store and protect your personal information when you use our website and services, including air ticketing, tour packages and Hajj &amp; Umrah services.</p>
 
 <h2>2. Information We Collect</h2>
 <ul>
@@ -41,7 +41,7 @@ const DEFAULTS: Record<PolicyType, { title: { en: string; bn: string }; content:
 `.trim(),
             bn: `
 <h2>১. ভূমিকা</h2>
-<p>Divine Travelers ("Divine Travelers", "আমরা")-এর কাছে আপনার গোপনীয়তা গুরুত্বপূর্ণ। এই প্রাইভেসি পলিসিতে ব্যাখ্যা করা হয়েছে আপনি যখন আমাদের ওয়েবসাইট ও সেবা—ভিসা প্রসেসিং, এয়ার টিকিট, হোটেল রিজার্ভেশন, ট্যুর প্যাকেজ, হজ্জ ও উমরাহ এবং বিদেশে পড়াশোনা—ব্যবহার করেন তখন আমরা কীভাবে আপনার ব্যক্তিগত তথ্য সংগ্রহ, ব্যবহার, সংরক্ষণ ও সুরক্ষা করি।</p>
+<p>Divine Travellers ("Divine Travellers", "আমরা")-এর কাছে আপনার গোপনীয়তা গুরুত্বপূর্ণ। এই প্রাইভেসি পলিসিতে ব্যাখ্যা করা হয়েছে আপনি যখন আমাদের ওয়েবসাইট ও সেবা—ভিসা প্রসেসিং, এয়ার টিকিট, হোটেল রিজার্ভেশন, ট্যুর প্যাকেজ, হজ্জ ও উমরাহ এবং বিদেশে পড়াশোনা—ব্যবহার করেন তখন আমরা কীভাবে আপনার ব্যক্তিগত তথ্য সংগ্রহ, ব্যবহার, সংরক্ষণ ও সুরক্ষা করি।</p>
 
 <h2>২. আমরা যেসব তথ্য সংগ্রহ করি</h2>
 <ul>
@@ -73,7 +73,7 @@ const DEFAULTS: Record<PolicyType, { title: { en: string; bn: string }; content:
         content: {
             en: `
 <h2>1. Overview</h2>
-<p>This Refund &amp; Cancellation Policy applies to all services booked through Divine Travelers, including air tickets, tour packages and Hajj &amp; Umrah packages.</p>
+<p>This Refund &amp; Cancellation Policy applies to all services booked through Divine Travellers, including air tickets, tour packages and Hajj &amp; Umrah packages.</p>
 
 <h2>2. Service Fees vs. Third-Party Fees</h2>
 <p>Our <strong>service/processing fee</strong> covers the professional work we perform on your behalf. Government fees, embassy fees and airline fares are paid to third parties and are governed by their own refund rules.</p>
@@ -96,7 +96,7 @@ const DEFAULTS: Record<PolicyType, { title: { en: string; bn: string }; content:
 `.trim(),
             bn: `
 <h2>১. সংক্ষিপ্ত বিবরণ</h2>
-<p>এই রিফান্ড ও ক্যান্সেলেশন পলিসি Divine Travelers-এর মাধ্যমে বুক করা সকল সেবার—ভিসা প্রসেসিং, এয়ার টিকিট, হোটেল রিজার্ভেশন, ট্যুর প্যাকেজ এবং হজ্জ ও উমরাহ প্যাকেজ—ক্ষেত্রে প্রযোজ্য।</p>
+<p>এই রিফান্ড ও ক্যান্সেলেশন পলিসি Divine Travellers-এর মাধ্যমে বুক করা সকল সেবার—ভিসা প্রসেসিং, এয়ার টিকিট, হোটেল রিজার্ভেশন, ট্যুর প্যাকেজ এবং হজ্জ ও উমরাহ প্যাকেজ—ক্ষেত্রে প্রযোজ্য।</p>
 
 <h2>২. সার্ভিস ফি বনাম থার্ড-পার্টি ফি</h2>
 <p>আমাদের <strong>সার্ভিস/প্রসেসিং ফি</strong> আপনার পক্ষে সম্পাদিত পেশাদার কাজের জন্য। সরকারি ফি, দূতাবাস ফি, এয়ারলাইন ভাড়া ও হোটেল চার্জ তৃতীয় পক্ষকে পরিশোধ করা হয় এবং তাদের নিজস্ব রিফান্ড নিয়ম অনুযায়ী পরিচালিত হয়।</p>

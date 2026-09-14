@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Legal Policy Controller
+// Divine Travellers - Legal Policy Controller
 // ===================================================================
 
 import { Request, Response, NextFunction } from 'express';

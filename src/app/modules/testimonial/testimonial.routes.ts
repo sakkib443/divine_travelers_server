@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Testimonial Routes
+// Divine Travellers - Testimonial Routes
 // ===================================================================
 
 import express from 'express';

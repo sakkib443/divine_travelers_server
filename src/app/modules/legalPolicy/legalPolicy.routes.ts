@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Legal Policy Routes
+// Divine Travellers - Legal Policy Routes
 // ===================================================================
 
 import express from 'express';

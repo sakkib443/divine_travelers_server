@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers LMS - User Interface
+// Divine Travellers LMS - User Interface
 // User মডেলের TypeScript interface definitions
 // ===================================================================
 

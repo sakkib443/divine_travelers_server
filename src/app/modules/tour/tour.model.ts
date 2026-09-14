@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Tour Model
+// Divine Travellers - Tour Model
 // Mongoose schema for Tour module
 // ট্যুর মডিউলের Mongoose স্কিমা
 // ===================================================================

@@ -55,10 +55,10 @@ const ticketSchema = new Schema(
         flights: [flightSchema],
         fares: [fareSchema],
         grandTotal: { type: String, default: '' },
-        agencyName: { type: String, default: 'Divine Travelers' },
+        agencyName: { type: String, default: 'Divine Travellers' },
         agencyPhone: { type: String, default: 'XXXXXXX' },
         agencyEmail: { type: String, default: 'XXXXXXX' },
-        agencyWebsite: { type: String, default: 'www.divinetravelers.com' },
+        agencyWebsite: { type: String, default: 'www.divinetravellers.com' },
         agencyOffice: { type: String, default: 'XXXXXXX' },
         // যে ফাইলটা স্ক্যান করে এই টিকিট বানানো হয়েছে (relative /uploads/... path)।
         sourceFile: { type: String, default: '' },

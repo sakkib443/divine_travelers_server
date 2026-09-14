@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Analytics Controller
+// Divine Travellers - Analytics Controller
 // ===================================================================
 
 import { Request, Response } from 'express';

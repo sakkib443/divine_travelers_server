@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Authentication Middleware
+// Divine Travellers - Authentication Middleware
 // JWT Token verify করে user authenticate করার জন্য middleware
 // ===================================================================
 

@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Ticket Validation (Zod)
+// Divine Travellers - Ticket Validation (Zod)
 // ===================================================================
 
 import { z } from 'zod';

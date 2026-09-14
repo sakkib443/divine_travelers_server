@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Analytics Service
+// Divine Travellers - Analytics Service
 // Real financial & booking analytics for the admin dashboard
 // ===================================================================
 
@@ -134,7 +134,7 @@ const getDashboard = async () => {
             name: b.serviceName,
             date: b.details?.travelDate || b.details?.date
                 || new Date(b.createdAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }),
-            travelers: b.details?.travelers || b.details?.numberOfTravelers || b.details?.persons || '—',
+            travelers: b.details?.travelers || b.details?.numberOfTravellers || b.details?.persons || '—',
             revenue: b.amount || b.paidAmount || 0,
         }));
 

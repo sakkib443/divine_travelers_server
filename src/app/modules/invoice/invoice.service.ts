@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Invoice Service
+// Divine Travellers - Invoice Service
 // Professional A4 invoice PDF generator (PDFKit) for bookings
 // ===================================================================
 
@@ -9,7 +9,7 @@ import { ISettings } from '../settings/settings.interface';
 
 // ── Brand palette ──────────────────────────────────────────────
 const COLORS = {
-    primary: '#3590CF', // Divine Travelers blue
+    primary: '#3590CF', // Divine Travellers blue
     accent: '#EF8C2C', // orange
     dark: '#0a1628', // near-black navy
     lightRow: '#f2f6fa', // zebra / light grey rows
@@ -127,7 +127,7 @@ export const generateInvoicePdf = (
                 .fillColor(COLORS.white)
                 .font('Helvetica-Bold')
                 .fontSize(26)
-                .text('DIVINE TRAVELERS', MARGIN, 26);
+                .text('DIVINE TRAVELLERS', MARGIN, 26);
             doc
                 .fillColor(COLORS.primary)
                 .font('Helvetica-Bold')
@@ -423,7 +423,7 @@ export const generateInvoicePdf = (
                 .fillColor(COLORS.dark)
                 .font('Helvetica-Bold')
                 .fontSize(10)
-                .text('Divine Travelers', MARGIN, fy + 12, {
+                .text('Divine Travellers', MARGIN, fy + 12, {
                     width: CONTENT_W,
                 });
             doc.font('Helvetica').fontSize(9).fillColor(COLORS.muted);
@@ -444,7 +444,7 @@ export const generateInvoicePdf = (
                 .fillColor(COLORS.primary)
                 .font('Helvetica-Bold')
                 .fontSize(9.5)
-                .text('Thank you for choosing Divine Travelers.', MARGIN, doc.y + 8, {
+                .text('Thank you for choosing Divine Travellers.', MARGIN, doc.y + 8, {
                     width: CONTENT_W,
                 });
             doc

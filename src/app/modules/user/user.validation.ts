@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers LMS - User Validation
+// Divine Travellers LMS - User Validation
 // Zod দিয়ে User data validation schemas
 // ===================================================================
 

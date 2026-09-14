@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - User Service
+// Divine Travellers Backend - User Service
 // User related business logic (CRUD operations)
 // ===================================================================
 

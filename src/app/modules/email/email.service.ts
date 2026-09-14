@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Email Service
+// Divine Travellers Backend - Email Service
 // Email sending functionality using Nodemailer
 // ===================================================================
 
@@ -33,7 +33,7 @@ const getEmailWrapper = (content: string) => `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divine Travelers</title>
+    <title>Divine Travellers</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc; }
@@ -43,7 +43,7 @@ const getEmailWrapper = (content: string) => `
     <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
         <!-- Header -->
         <div style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); padding: 30px; text-align: center;">
-            <h1 style="color: white; font-size: 28px; font-weight: bold; margin: 0;">Divine Travelers</h1>
+            <h1 style="color: white; font-size: 28px; font-weight: bold; margin: 0;">Divine Travellers</h1>
             <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin-top: 5px;">Journey Beyond Borders</p>
         </div>
         
@@ -55,10 +55,10 @@ const getEmailWrapper = (content: string) => `
         <!-- Footer -->
         <div style="background: #f8fafc; padding: 25px 30px; text-align: center; border-top: 1px solid #e2e8f0;">
             <p style="color: #64748b; font-size: 12px; margin: 0;">
-                © ${new Date().getFullYear()} Divine Travelers. All rights reserved.
+                © ${new Date().getFullYear()} Divine Travellers. All rights reserved.
             </p>
             <p style="color: #94a3b8; font-size: 11px; margin-top: 8px;">
-                This email was sent from <a href="${config.frontend_url}" style="color: #14b8a6;">divinetravelers.com</a>
+                This email was sent from <a href="${config.frontend_url}" style="color: #14b8a6;">divinetravellers.com</a>
             </p>
         </div>
     </div>
@@ -72,7 +72,7 @@ const getWelcomeEmailTemplate = (firstName: string) => getEmailWrapper(`
         <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
             <span style="font-size: 36px;">🎉</span>
         </div>
-        <h2 style="color: #1e293b; font-size: 24px; margin-bottom: 10px;">Welcome to Divine Travelers!</h2>
+        <h2 style="color: #1e293b; font-size: 24px; margin-bottom: 10px;">Welcome to Divine Travellers!</h2>
         <p style="color: #64748b; font-size: 16px;">We're excited to have you on board</p>
     </div>
     
@@ -81,7 +81,7 @@ const getWelcomeEmailTemplate = (firstName: string) => getEmailWrapper(`
     </p>
     
     <p style="color: #334155; font-size: 16px; line-height: 1.6; margin-bottom: 25px;">
-        Thank you for joining Divine Travelers! You now have access to our premium collection of website templates and software solutions.
+        Thank you for joining Divine Travellers! You now have access to our premium collection of website templates and software solutions.
     </p>
     
     <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; padding: 25px; margin-bottom: 25px;">
@@ -408,9 +408,9 @@ const EmailService = {
     async sendWelcomeEmail(email: string, firstName: string): Promise<boolean> {
         try {
             await transporter.sendMail({
-                from: `"Divine Travelers" <${config.email.from}>`,
+                from: `"Divine Travellers" <${config.email.from}>`,
                 to: email,
-                subject: '🎉 Welcome to Divine Travelers - Your Premium Template Journey Begins!',
+                subject: '🎉 Welcome to Divine Travellers - Your Premium Template Journey Begins!',
                 html: getWelcomeEmailTemplate(firstName),
             });
             console.log(`✅ Welcome email sent to ${email}`);
@@ -425,7 +425,7 @@ const EmailService = {
     async sendInvoiceEmail(email: string, invoiceData: InvoiceData): Promise<boolean> {
         try {
             await transporter.sendMail({
-                from: `"Divine Travelers" <${config.email.from}>`,
+                from: `"Divine Travellers" <${config.email.from}>`,
                 to: email,
                 subject: `✅ Payment Confirmed - Order #${invoiceData.orderId.slice(-8).toUpperCase()}`,
                 html: getInvoiceEmailTemplate(invoiceData),
@@ -452,13 +452,13 @@ const EmailService = {
             const currency = booking.currency || 'BDT';
             const amountThisTime =
                 typeof lastPaymentAmount === 'number' ? lastPaymentAmount : booking.paidAmount;
-            const filename = `invoice-${trackingId || 'divinetravelers'}.pdf`;
+            const filename = `invoice-${trackingId || 'divinetravellers'}.pdf`;
             const attachments = [{ filename, content: pdfBuffer }];
 
             // 1) Customer receipt/invoice
             if (booking.email) {
                 await transporter.sendMail({
-                    from: `"Divine Travelers" <${config.email.from}>`,
+                    from: `"Divine Travellers" <${config.email.from}>`,
                     to: booking.email,
                     subject: `🧾 Payment Receipt / Invoice — ${trackingId}`,
                     html: getBookingReceiptTemplate(booking, amountThisTime),
@@ -472,7 +472,7 @@ const EmailService = {
             if (adminEmail) {
                 const dueOutstanding = (Number(booking.dueAmount) || 0) > 0;
                 await transporter.sendMail({
-                    from: `"Divine Travelers" <${config.email.from}>`,
+                    from: `"Divine Travellers" <${config.email.from}>`,
                     to: adminEmail,
                     subject: `💰 Payment recorded — ${booking.name || 'Customer'} (${trackingId})`,
                     html: getEmailWrapper(`
@@ -505,9 +505,9 @@ const EmailService = {
         try {
             const resetLink = `${config.frontend_url}/reset-password?token=${resetToken}`;
             await transporter.sendMail({
-                from: `"Divine Travelers" <${config.email.from}>`,
+                from: `"Divine Travellers" <${config.email.from}>`,
                 to: email,
-                subject: '🔐 Reset Your Password - Divine Travelers',
+                subject: '🔐 Reset Your Password - Divine Travellers',
                 html: getPasswordResetEmailTemplate(firstName, resetLink),
             });
             console.log(`✅ Password reset email sent to ${email}`);
@@ -522,7 +522,7 @@ const EmailService = {
     async sendLiveClassNotification(email: string, classData: LiveClassData): Promise<boolean> {
         try {
             await transporter.sendMail({
-                from: `"Divine Travelers" <${config.email.from}>`,
+                from: `"Divine Travellers" <${config.email.from}>`,
                 to: email,
                 subject: `🎥 New Live Class: ${classData.className}`,
                 html: getLiveClassEmailTemplate(classData),

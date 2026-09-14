@@ -1,7 +1,7 @@
 {
   "name": "divine-travelers-backend",
   "version": "1.0.0",
-  "description": "Divine Travelers - Travel & Visa Consultancy API",
+  "description": "Divine Travellers - Travel & Visa Consultancy API",
   "main": "index.js",
   "scripts": {
     "start:prod": "node ./dist/server.js",
@@ -24,7 +24,7 @@
     "templates",
     "api"
   ],
-  "author": "Divine Travelers Team",
+  "author": "Divine Travellers Team",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

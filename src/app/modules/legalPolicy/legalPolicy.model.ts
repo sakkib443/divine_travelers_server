@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Legal Policy Model
+// Divine Travellers - Legal Policy Model
 // type-based documents: privacy / refund — প্রতিটির জন্য আলাদা document
 // ===================================================================
 

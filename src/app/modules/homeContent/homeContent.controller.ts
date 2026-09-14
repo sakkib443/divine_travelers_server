@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Home Content Controller
+// Divine Travellers - Home Content Controller
 // ===================================================================
 
 import { Request, Response, NextFunction } from 'express';

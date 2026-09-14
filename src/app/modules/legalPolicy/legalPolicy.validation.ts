@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Legal Policy Validation (Zod)
+// Divine Travellers - Legal Policy Validation (Zod)
 // Privacy / Refund policy আপডেটের জন্য ভ্যালিডেশন
 // ===================================================================
 

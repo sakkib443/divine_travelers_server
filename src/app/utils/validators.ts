@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers Backend - Shared Zod validators
+// Divine Travellers Backend - Shared Zod validators
 // ===================================================================
 
 import { z } from 'zod';

@@ -52,7 +52,7 @@ export default {
     port: Number(process.env.EMAIL_PORT) || 587,
     user: process.env.EMAIL_USER || '',
     pass: process.env.EMAIL_PASS || '',
-    from: process.env.EMAIL_FROM || 'info@divinetravelers.com',
+    from: process.env.EMAIL_FROM || 'info@divinetravellers.com',
   },
 
   // ==================== Frontend URL ====================

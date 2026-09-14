@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Tour Interface
+// Divine Travellers - Tour Interface
 // Tour module TypeScript interface definitions
 // ট্যুর মডিউলের TypeScript interface definitions
 // ===================================================================

@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Tour Validation
+// Divine Travellers - Tour Validation
 // Zod validation schemas for Tour module
 // ট্যুর মডিউলের ভ্যালিডেশন স্কিমা
 // ===================================================================

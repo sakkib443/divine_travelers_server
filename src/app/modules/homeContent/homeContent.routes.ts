@@ -1,5 +1,5 @@
 // ===================================================================
-// Divine Travelers - Home Content Routes
+// Divine Travellers - Home Content Routes
 // ===================================================================
 
 import express from 'express';
