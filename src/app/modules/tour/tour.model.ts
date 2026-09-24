@@ -71,7 +71,7 @@ const tourSchema = new Schema<ITour, TourModel>(
         category: {
             type: String,
             required: [true, 'Category is required'],
-            enum: ['adventure', 'beach', 'city', 'culture', 'hill', 'international', 'luxury', 'religious', 'nature', 'historical'],
+            enum: ['adventure', 'beach', 'city', 'culture', 'hill', 'luxury', 'religious', 'nature', 'historical'],
             default: 'adventure',
         },
         tourType: {
