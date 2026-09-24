@@ -3,10 +3,13 @@
 // ===================================================================
 
 import { Request, Response, NextFunction } from 'express';
-import { HomeContentService } from './homeContent.service';
+import { HomeContentService, HOME_CONTENT_DEFAULTS } from './homeContent.service';
 import { SectionName } from './homeContent.interface';
 
-const VALID_SECTIONS: SectionName[] = ['hero', 'services', 'about', 'whyChooseUs', 'noticeBoard'];
+// Derived from the DEFAULTS keys so a newly-added section is accepted
+// automatically — this list can never drift out of sync with the sections
+// that actually exist (which is what silently rejected the About-page ones).
+const VALID_SECTIONS = Object.keys(HOME_CONTENT_DEFAULTS) as SectionName[];
 
 const getAllSections = async (_req: Request, res: Response, next: NextFunction) => {
     try {
