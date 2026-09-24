@@ -7,6 +7,8 @@
     "start:prod": "node ./dist/server.js",
     "start:dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
+    "seed:content": "ts-node --transpile-only src/scripts/seedHomeContent.ts",
+    "seed:content:prod": "node dist/scripts/seedHomeContent.js",
     "migrate:uploads": "node migrate-cloudinary-to-local.js",
     "migrate:uploads:dry": "node migrate-cloudinary-to-local.js --dry-run",
     "lint": "eslint src --ignore-path .eslintignore --ext .ts",

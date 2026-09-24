@@ -143,7 +143,62 @@ const DEFAULTS: Record<SectionName, any> = {
                 bn: "ফ্লাইট টিকিটের দাম কমছে! সেরা রেটে আপনার পরবর্তী ফ্লাইট বুক করুন আমাদের সাথে।"
             }
         ]
-    }
+    },
+    // ─── About page ───────────────────────────────────────────────────
+    aboutFounder: {
+        eyebrow: { en: 'Leadership', bn: 'নেতৃত্ব' },
+        heading: { en: 'Message from our Founder', bn: 'প্রতিষ্ঠাতার বার্তা' },
+        name: { en: 'Md. Abdul Karim', bn: 'মোঃ আব্দুল করিম' },
+        title: { en: 'Founder & Managing Director', bn: 'প্রতিষ্ঠাতা ও ব্যবস্থাপনা পরিচালক' },
+        photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80',
+        message: {
+            en: 'When I founded Divine Travellers, the vision was simple — to make international travel and migration honest, transparent, and accessible for every Bangladeshi. Thousands of successful journeys later, that same promise still drives everything we do. Your dream destination is our mission.',
+            bn: 'ডিভাইন ট্রাভেলার্স প্রতিষ্ঠার সময় আমার স্বপ্ন ছিল সহজ — প্রতিটি বাংলাদেশির জন্য আন্তর্জাতিক ভ্রমণ ও মাইগ্রেশনকে সৎ, স্বচ্ছ ও সহজলভ্য করা। আজ হাজারো সফল যাত্রার পরও সেই প্রতিশ্রুতিই আমাদের প্রতিটি কাজের চালিকাশক্তি। আপনার স্বপ্নের গন্তব্যই আমাদের লক্ষ্য।',
+        },
+        isActive: true,
+    },
+    aboutTeam: {
+        eyebrow: { en: 'Our Team', bn: 'আমাদের টিম' },
+        heading: { en: 'Meet the People Behind Divine Travellers', bn: 'ডিভাইন ট্রাভেলার্সের পেছনের মানুষগুলো' },
+        description: {
+            en: 'A dedicated team working every day to make your journey effortless.',
+            bn: 'প্রতিদিন আপনার যাত্রাকে সহজ করতে নিবেদিত একটি টিম।',
+        },
+        members: [
+            { name: { en: 'Rafiul Islam', bn: 'রফিউল ইসলাম' }, role: { en: 'Senior Travel Consultant', bn: 'সিনিয়র ট্রাভেল কনসালট্যান্ট' }, photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80', order: 1 },
+            { name: { en: 'Nusrat Jahan', bn: 'নুসরাত জাহান' }, role: { en: 'Tour Manager', bn: 'ট্যুর ও হোটেল ম্যানেজার' }, photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80', order: 2 },
+            { name: { en: 'Tanvir Ahmed', bn: 'তানভীর আহমেদ' }, role: { en: 'Documentation Officer', bn: 'ডকুমেন্টেশন অফিসার' }, photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80', order: 3 },
+            { name: { en: 'Sadia Rahman', bn: 'সাদিয়া রহমান' }, role: { en: 'Customer Support Lead', bn: 'কাস্টমার সাপোর্ট লিড' }, photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80', order: 4 },
+        ],
+        isActive: true,
+    },
+    aboutWhy: {
+        eyebrow: { en: 'Why Choose Us', bn: 'কেন আমরা' },
+        heading: { en: 'Built on Trust & Results', bn: 'বিশ্বাস ও ফলাফলের উপর গড়া' },
+        description: {
+            en: 'What makes thousands of clients choose Divine Travellers again and again.',
+            bn: 'যে কারণে হাজারো ক্লায়েন্ট বারবার ডিভাইন ট্রাভেলার্সকে বেছে নেন।',
+        },
+        cards: [
+            { icon: 'LuTarget', title: { en: 'Expert Guidance', bn: 'বিশেষজ্ঞ গাইডেন্স' }, description: { en: 'Every application is handled by experienced consultants who guide you at every step.', bn: 'প্রতিটি আবেদন অভিজ্ঞ পরামর্শদাতাদের দ্বারা পরিচালিত হয় যারা প্রতিটি ধাপে আপনাকে গাইড করেন।' }, order: 1 },
+            { icon: 'LuZap', title: { en: 'Fast Processing', bn: 'দ্রুত প্রসেসিং' }, description: { en: 'We make flight and travel arrangements as smooth and quick as possible.', bn: 'ফ্লাইট, হোটেল ও ভ্রমণ ব্যবস্থা যতটা সম্ভব সহজ ও দ্রুত করতে আমরা কাজ করি।' }, order: 2 },
+            { icon: 'LuShieldCheck', title: { en: 'Trust & Security', bn: 'বিশ্বাস ও নিরাপত্তা' }, description: { en: 'Your documents and personal information are handled with strict confidentiality.', bn: 'আপনার নথি ও ব্যক্তিগত তথ্য কঠোর গোপনীয়তার সাথে পরিচালিত হয়।' }, order: 3 },
+            { icon: 'LuHeart', title: { en: 'Client Care', bn: 'ক্লায়েন্ট কেয়ার' }, description: { en: 'We are dedicated to giving every client honest advice and dependable support.', bn: 'আমরা প্রতিটি ক্লায়েন্টকে সৎ পরামর্শ ও নির্ভরযোগ্য সহায়তা দিতে নিবেদিত।' }, order: 4 },
+        ],
+        isActive: true,
+    },
+    aboutCta: {
+        heading: { en: 'Ready to Start Your Journey?', bn: 'আপনার যাত্রা শুরু করতে প্রস্তুত?' },
+        description: {
+            en: 'Let our experts handle the paperwork while you focus on the destination. Talk to us today.',
+            bn: 'কাগজপত্রের ঝামেলা আমাদের বিশেষজ্ঞদের হাতে ছেড়ে দিন, আপনি শুধু গন্তব্য নিয়ে ভাবুন। আজই যোগাযোগ করুন।',
+        },
+        button1Text: { en: 'Contact Us', bn: 'যোগাযোগ করুন' },
+        button1Link: '/contact',
+        button2Text: { en: 'Explore Tours', bn: 'ট্যুর দেখুন' },
+        button2Link: '/tour',
+        isActive: true,
+    },
 };
 
 // ─── Field whitelists (per section) ───────────────────────────────────
@@ -160,6 +215,8 @@ const WHY_CHOOSE_CARD_FIELDS = ['title', 'description', 'icon', 'color', 'order'
 const STAT_ITEM_FIELDS = ['value', 'label', 'color', 'order'] as const;
 const NOTICE_ITEM_FIELDS = ['en', 'bn'] as const;
 const ABOUT_FEATURE_FIELDS = ['icon', 'value', 'title', 'subtitle', 'order'] as const;
+const TEAM_MEMBER_FIELDS = ['name', 'role', 'photo', 'order'] as const;
+const ABOUT_VALUE_FIELDS = ['icon', 'title', 'description', 'order'] as const;
 
 // One background picture behind the hero
 const HERO_SLIDE_FIELDS = ['image', 'order'] as const;
@@ -189,6 +246,20 @@ const SECTION_FIELDS: Record<SectionName, readonly string[]> = {
     ],
     noticeBoard: [
         'isActive', 'notices',
+    ],
+    // ─── About page sections ───────────────────────────────────────────
+    aboutFounder: [
+        'eyebrow', 'heading', 'name', 'title', 'photo', 'message', 'isActive',
+    ],
+    aboutTeam: [
+        'eyebrow', 'heading', 'description', 'members', 'isActive',
+    ],
+    aboutWhy: [
+        'eyebrow', 'heading', 'description', 'cards', 'isActive',
+    ],
+    aboutCta: [
+        'heading', 'description', 'button1Text', 'button1Link',
+        'button2Text', 'button2Link', 'isActive',
     ],
 };
 
@@ -240,6 +311,16 @@ const sanitizeSectionData = (section: SectionName, input: any): Record<string, a
     if (section === 'noticeBoard') {
         if (data.notices !== undefined) data.notices = pickItems(data.notices, NOTICE_ITEM_FIELDS);
     }
+    // About page: renumber `order` from the array position so the page renders
+    // rows in exactly the order the admin arranged them.
+    if (section === 'aboutTeam' && data.members !== undefined) {
+        data.members = pickItems(data.members, TEAM_MEMBER_FIELDS)
+            .map((m, i) => ({ ...m, order: i + 1 }));
+    }
+    if (section === 'aboutWhy' && data.cards !== undefined) {
+        data.cards = pickItems(data.cards, ABOUT_VALUE_FIELDS)
+            .map((c, i) => ({ ...c, order: i + 1 }));
+    }
 
     return data;
 };
@@ -260,7 +341,7 @@ const getAllSections = async (): Promise<IHomeContent[]> => {
         docs = await HomeContent.find().lean();
     }
 
-    return docs as IHomeContent[];
+    return docs as unknown as IHomeContent[];
 };
 
 // ─── Get single section ───────────────────────────────────────────────
@@ -292,16 +373,25 @@ const updateSection = async (
 };
 
 // ─── Seed all defaults ────────────────────────────────────────────────
-const seedDefaults = async (): Promise<IHomeContent[]> => {
+// Safe by default: only sections missing from the database are created, so
+// running it on a live site never overwrites content an admin has edited.
+// `force` resets every section back to the built-in defaults.
+const seedDefaults = async (force = false): Promise<IHomeContent[]> => {
     const sections = Object.keys(DEFAULTS) as SectionName[];
     for (const section of sections) {
         const exists = await HomeContent.findOne({ section });
         if (!exists) {
             await HomeContent.create({ section, data: DEFAULTS[section] });
+        } else if (force) {
+            exists.data = DEFAULTS[section];
+            exists.markModified('data');
+            await exists.save();
         }
     }
     return HomeContent.find().lean() as unknown as IHomeContent[];
 };
+
+export { DEFAULTS as HOME_CONTENT_DEFAULTS };
 
 export const HomeContentService = {
     getAllSections,

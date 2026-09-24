@@ -108,13 +108,90 @@ export interface INoticeBoardData {
     notices: INoticeItem[];
 }
 
+// ─── About page sections ─────────────────────────────────────────────
+// Each About-page block is its own section document so an admin can edit
+// (and hide) them independently, exactly like the homepage sections.
+
+// Founder / owner message
+export interface IAboutFounderData {
+    eyebrow: IBilingualText;
+    heading: IBilingualText;
+    name: IBilingualText;
+    title: IBilingualText;
+    photo: string;
+    message: IBilingualText;
+    isActive: boolean;
+}
+
+// One team member card
+export interface ITeamMember {
+    name: IBilingualText;
+    role: IBilingualText;
+    photo: string;
+    order: number;
+}
+
+export interface IAboutTeamData {
+    eyebrow: IBilingualText;
+    heading: IBilingualText;
+    description: IBilingualText;
+    members: ITeamMember[];
+    isActive: boolean;
+}
+
+// "Why choose us" value card (About page)
+export interface IAboutValueCard {
+    icon: string;
+    title: IBilingualText;
+    description: IBilingualText;
+    order: number;
+}
+
+export interface IAboutWhyData {
+    eyebrow: IBilingualText;
+    heading: IBilingualText;
+    description: IBilingualText;
+    cards: IAboutValueCard[];
+    isActive: boolean;
+}
+
+// Closing call-to-action band
+export interface IAboutCtaData {
+    heading: IBilingualText;
+    description: IBilingualText;
+    button1Text: IBilingualText;
+    button1Link: string;
+    button2Text: IBilingualText;
+    button2Link: string;
+    isActive: boolean;
+}
+
 // Section types
-export type SectionName = 'hero' | 'services' | 'about' | 'whyChooseUs' | 'noticeBoard';
+export type SectionName =
+    | 'hero'
+    | 'services'
+    | 'about'
+    | 'whyChooseUs'
+    | 'noticeBoard'
+    // About page
+    | 'aboutFounder'
+    | 'aboutTeam'
+    | 'aboutWhy'
+    | 'aboutCta';
 
 // Main document
 export interface IHomeContent extends Document {
     section: SectionName;
-    data: IHeroData | IServicesData | IAboutData | IWhyChooseData | INoticeBoardData;
+    data:
+        | IHeroData
+        | IServicesData
+        | IAboutData
+        | IWhyChooseData
+        | INoticeBoardData
+        | IAboutFounderData
+        | IAboutTeamData
+        | IAboutWhyData
+        | IAboutCtaData;
     createdAt: Date;
     updatedAt: Date;
 }
