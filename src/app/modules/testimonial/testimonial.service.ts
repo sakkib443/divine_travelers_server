@@ -45,7 +45,7 @@ const getApprovedTestimonials = async (): Promise<ITestimonial[]> => {
     return Testimonial.find({ status: 'approved' })
         .sort({ isFeatured: -1, createdAt: -1 })
         .limit(12)
-        .lean();
+        .lean() as unknown as ITestimonial[];
 };
 
 /**
@@ -69,7 +69,7 @@ const getAllTestimonials = async (
     return Testimonial.find(query)
         .populate('user', 'firstName lastName email avatar')
         .sort({ createdAt: -1 })
-        .lean();
+        .lean() as unknown as ITestimonial[];
 };
 
 /**
@@ -82,7 +82,7 @@ const getTestimonialById = async (id: string): Promise<ITestimonial> => {
     if (!testimonial) {
         throw new AppError(404, 'Testimonial not found');
     }
-    return testimonial as ITestimonial;
+    return testimonial as unknown as ITestimonial;
 };
 
 /**

@@ -149,6 +149,12 @@ export interface IUser {
   // Password reset fields
   passwordResetToken?: string;
   passwordResetExpires?: Date;
+
+  // Two-factor auth (email OTP). Secret/expiry exist only while a login is
+  // being verified; they are cleared once the code is accepted.
+  twoFactorEnabled?: boolean;
+  twoFactorSecret?: string;
+  twoFactorExpiry?: Date;
   passwordChangedAt?: Date;
 
   // Timestamps

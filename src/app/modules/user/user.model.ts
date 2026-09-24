@@ -289,6 +289,12 @@ const userSchema = new Schema<IUser, UserModel, IUserMethods>(
     // ==================== Password Reset ====================
     passwordResetToken: String,
     passwordResetExpires: Date,
+
+    // Two-factor auth (email OTP). `select: false` keeps the code out of
+    // ordinary user responses — the 2FA flow asks for it explicitly.
+    twoFactorEnabled: { type: Boolean, default: false },
+    twoFactorSecret: { type: String, select: false },
+    twoFactorExpiry: { type: Date, select: false },
     passwordChangedAt: Date,
 
     // ==================== Activity ====================

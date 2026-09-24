@@ -7,6 +7,7 @@ import AppError from '../../utils/AppError';
 import { generateInvoicePdf } from '../invoice/invoice.service';
 import { SettingsService } from '../settings/settings.service';
 import EmailService from '../email/email.service';
+import { TUserRole } from '../user/user.interface';
 
 // Generate a short, human-friendly public tracking code (e.g. AV-1A2B3C4D)
 const makeCode = () => `AV-${crypto.randomBytes(4).toString('hex').toUpperCase()}`;
@@ -166,7 +167,7 @@ const getAllBookings = async (query: Record<string, string>) => {
 };
 
 // Requester context for access-controlled operations
-type TRequester = { userId: string; role: 'admin' };
+type TRequester = { userId: string; role: TUserRole };
 
 // Update booking status — also appends to the status timeline. Admin only.
 const updateBookingStatus = async (
@@ -221,7 +222,7 @@ const setBookingDocuments = async (
 const addRemark = async (
     id: string,
     text: string,
-    author: { userId: string; name: string; role: 'admin' }
+    author: { userId: string; name: string; role: TUserRole }
 ) => {
     const trimmed = (text || '').trim();
     if (!trimmed) throw new AppError(400, 'Remark text is required');

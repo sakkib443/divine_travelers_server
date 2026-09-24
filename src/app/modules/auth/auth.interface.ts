@@ -3,6 +3,8 @@
 // Authentication related TypeScript types
 // ===================================================================
 
+import { TUserRole } from '../user/user.interface';
+
 /**
  * ILoginPayload - Login request body
  * Login করার সময় যে data আসবে
@@ -67,7 +69,7 @@ export interface IResetPasswordPayload {
 export interface IJwtPayload {
     userId: string;
     email: string;
-    role: 'admin';
+    role: TUserRole;
     iat?: number;
     exp?: number;
 }

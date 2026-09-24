@@ -33,7 +33,7 @@ const generateOTP = (): string => {
 
 export const TwoFactorService = {
     async enableTwoFactor(userId: string) {
-        const user = await User.findById(userId);
+        const user = await User.findById(userId).select('+twoFactorSecret +twoFactorExpiry');
         if (!user) throw new AppError(404, 'User not found');
 
         const otp = generateOTP();
@@ -54,7 +54,7 @@ export const TwoFactorService = {
     },
 
     async verifyTwoFactor(userId: string, otp: string) {
-        const user = await User.findById(userId);
+        const user = await User.findById(userId).select('+twoFactorSecret +twoFactorExpiry');
         if (!user) throw new AppError(404, 'User not found');
 
         if (!user.twoFactorSecret || !user.twoFactorExpiry) {
