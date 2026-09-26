@@ -28,14 +28,23 @@ const generateTrackingId = async (): Promise<string> => {
 // can still adjust the final quote later via "Set Amount".
 const resolveServicePrice = async (
     type: unknown,
-    serviceId: unknown
+    serviceId: unknown,
+    packageType?: unknown
 ): Promise<{ amount: number; currency?: string } | null> => {
     const id = String(serviceId || '');
     if (!id || !Types.ObjectId.isValid(id)) return null;
     try {
         if (type === 'tour') {
-            const t = await Tour.findById(id).select('price currency').lean();
-            if (t && Number(t.price) > 0) return { amount: Number(t.price), currency: (t as any).currency };
+            // A tour can be booked as a single or a couple package — pick the
+            // matching price. `price` is the single price; `couplePrice` the couple one.
+            const t = await Tour.findById(id).select('price couplePrice currency').lean();
+            if (t) {
+                const isCouple = String(packageType).toLowerCase() === 'couple';
+                const amount = isCouple && Number((t as any).couplePrice) > 0
+                    ? Number((t as any).couplePrice)
+                    : Number(t.price);
+                if (amount > 0) return { amount, currency: (t as any).currency };
+            }
         } else if (type === 'hajj') {
             const p = await HajjUmrah.findById(id).select('price currency').lean();
             if (p && Number(p.price) > 0) return { amount: Number(p.price), currency: (p as any).currency };
@@ -56,7 +65,11 @@ const createBooking = async (userId: string | null, payload: Record<string, unkn
     const bookingUserId: string | null = userId;
 
     // Pre-fill the quoted amount from the service's advertised price.
-    const priced = await resolveServicePrice(payload.type, payload.serviceId);
+    const priced = await resolveServicePrice(
+        payload.type,
+        payload.serviceId,
+        (payload.details as Record<string, unknown> | undefined)?.packageType,
+    );
 
     const data: Record<string, unknown> = {
         type: payload.type,

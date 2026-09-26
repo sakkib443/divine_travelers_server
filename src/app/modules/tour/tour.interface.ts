@@ -58,9 +58,13 @@ export interface ITour {
     departureDates?: string[];         // Multiple departure dates
 
     // ==================== Pricing ====================
-    price: number;                     // Current price in BDT/USD
+    price: number;                     // Single-occupancy price (BDT/USD) — the base price
     oldPrice?: number;                 // Original price (for discount display)
     currency?: string;                 // e.g. "BDT", "USD"
+    // Single / Couple package options. `price` above is the single price.
+    singleEnabled?: boolean;           // offer a single package (default true)
+    coupleEnabled?: boolean;           // offer a couple package (default false)
+    couplePrice?: number;              // price for the couple package (required when coupleEnabled)
 
     // ==================== Group & Booking ====================
     groupSize?: number;                // Maximum group size

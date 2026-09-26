@@ -100,6 +100,10 @@ const tourSchema = new Schema<ITour, TourModel>(
             type: String,
             default: 'BDT',
         },
+        // Single / Couple package options. `price` above is the single price.
+        singleEnabled: { type: Boolean, default: true },
+        coupleEnabled: { type: Boolean, default: false },
+        couplePrice: { type: Number, min: 0 },
 
         // Group & Booking
         groupSize: { type: Number, default: 20 },

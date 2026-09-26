@@ -55,10 +55,13 @@ const createTourSchema = z.object({
         departureDate: z.string().optional(),
         departureDates: z.array(z.string()).optional(),
 
-        // Pricing
+        // Pricing (price = single-occupancy price)
         price: z.number({ required_error: 'Price is required' }).min(0),
         oldPrice: z.number().min(0).nullable().optional(),
         currency: z.string().default('BDT'),
+        singleEnabled: z.boolean().optional(),
+        coupleEnabled: z.boolean().optional(),
+        couplePrice: z.number().min(0).nullable().optional(),
 
         // Group & Booking
         groupSize: z.number().min(1).default(20),
@@ -135,6 +138,9 @@ const updateTourSchema = z.object({
         price: z.number().min(0).optional(),
         // nullable: the admin form sends null to clear the old (strike-through) price
         oldPrice: z.number().min(0).nullable().optional(),
+        singleEnabled: z.boolean().optional(),
+        coupleEnabled: z.boolean().optional(),
+        couplePrice: z.number().min(0).nullable().optional(),
         currency: z.string().optional(),
 
         groupSize: z.number().min(1).optional(),
