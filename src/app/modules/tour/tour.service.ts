@@ -143,6 +143,7 @@ const updateTour = async (
         'destination', 'destinationBn', 'category', 'tourType', 'tourTypeBn',
         'duration', 'durationBn', 'departureDate', 'departureDates',
         'price', 'oldPrice', 'currency',
+        'singleEnabled', 'coupleEnabled', 'couplePrice',
         'groupSize', 'bookings', 'minAge', 'maxAge',
         'description', 'descriptionBn', 'longDescription', 'longDescriptionBn',
         'itinerary', 'includes', 'includesBn', 'excludes', 'excludesBn',
