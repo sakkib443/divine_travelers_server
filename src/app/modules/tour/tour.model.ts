@@ -76,7 +76,7 @@ const tourSchema = new Schema<ITour, TourModel>(
         },
         tourType: {
             type: String,
-            enum: ['Solo Tour', 'Group Tour', 'Family Tour', 'Couple Tour', 'Corporate Tour'],
+            enum: ['Solo Tour', 'Group Tour', 'Family Tour', 'Couple Tour', 'Corporate Tour', 'Relax', 'Premium', 'Day Tour'],
         },
         tourTypeBn: { type: String },
 

@@ -45,7 +45,7 @@ const createTourSchema = z.object({
             'luxury', 'religious', 'nature', 'historical'
         ]).default('adventure'),
         tourType: z.enum([
-            'Solo Tour', 'Group Tour', 'Family Tour', 'Couple Tour', 'Corporate Tour'
+            'Solo Tour', 'Group Tour', 'Family Tour', 'Couple Tour', 'Corporate Tour', 'Relax', 'Premium', 'Day Tour'
         ]).nullable().optional(),
         tourTypeBn: z.string().optional(),
 
@@ -126,7 +126,7 @@ const updateTourSchema = z.object({
         // nullable so the admin form can clear an already-set tour type.
         // null (not '') because the Mongoose enum has no '' member and would reject it.
         tourType: z.enum([
-            'Solo Tour', 'Group Tour', 'Family Tour', 'Couple Tour', 'Corporate Tour'
+            'Solo Tour', 'Group Tour', 'Family Tour', 'Couple Tour', 'Corporate Tour', 'Relax', 'Premium', 'Day Tour'
         ]).nullable().optional(),
         tourTypeBn: z.string().optional(),
 
