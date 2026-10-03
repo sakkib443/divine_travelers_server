@@ -25,6 +25,7 @@ import { PdfExtractRoutes } from './app/modules/pdfExtract/pdfExtract.routes';
 import { BookingRoutes } from './app/modules/booking/booking.routes';
 import { TestimonialRoutes } from './app/modules/testimonial/testimonial.routes';
 import { SettingsRoutes } from './app/modules/settings/settings.routes';
+import { PageBannerRoutes } from './app/modules/pageBanner/pageBanner.routes';
 import { HomeContentRoutes } from './app/modules/homeContent/homeContent.routes';
 import { LegalPolicyRoutes } from './app/modules/legalPolicy/legalPolicy.routes';
 import { AnalyticsRoutes } from './app/modules/analytics/analytics.routes';
@@ -153,6 +154,9 @@ app.use('/api/settings', SettingsRoutes);
 
 // Home Content routes (homepage sections — admin-controlled)
 app.use('/api/home-content', HomeContentRoutes);
+
+// Page banners (top banner of Tour / Hajj pages, admin-managed)
+app.use('/api/page-banners', PageBannerRoutes);
 
 // Legal Policy routes (Privacy & Refund policies — admin-controlled)
 app.use('/api/legal-policies', LegalPolicyRoutes);
