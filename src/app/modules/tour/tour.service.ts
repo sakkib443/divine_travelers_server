@@ -140,7 +140,7 @@ const updateTour = async (
     // `_id`/`createdAt`/`updatedAt` must NEVER be assignable from the request body.
     const allowedFields: (keyof ITour)[] = [
         'title', 'titleBn', 'image', 'gallery',
-        'destination', 'destinationBn', 'category', 'tourType', 'tourTypeBn',
+        'destination', 'destinationBn', 'locationType', 'category', 'tourType', 'tourTypeBn',
         'duration', 'durationBn', 'departureDate', 'departureDates',
         'price', 'oldPrice', 'currency',
         'singleEnabled', 'coupleEnabled', 'couplePrice',
