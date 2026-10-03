@@ -23,3 +23,6 @@ hero-slides-backup.json
 
 # Local MongoDB data (mongodb-memory-server) — never commit the live database
 .local-mongo-data/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
