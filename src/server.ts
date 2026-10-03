@@ -6,6 +6,7 @@
 import mongoose from 'mongoose';
 import app from './app';
 import config from './app/config';
+import { TourService } from './app/modules/tour/tour.service';
 
 // ==================== Uncaught Exception Handler ====================
 // Synchronous errors যা try-catch দিয়ে catch হয়নি
@@ -50,6 +51,10 @@ async function bootstrap() {
 
     // Cleanup stale indexes
     await cleanupStaleIndexes();
+
+    // One-time, idempotent: fill in any missing tour locationType so the
+    // Domestic/International filter works without a manual migration.
+    await TourService.backfillLocationType();
 
     // Start server
     const server = app.listen(config.port, () => {

@@ -205,6 +205,52 @@ const getFeaturedTours = async (): Promise<ITour[]> => {
     return tours;
 };
 
+// Countries/regions that mark a tour International when named in its
+// destination/title. Anything else (incl. explicit "Bangladesh") is Domestic.
+const FOREIGN_MARKERS = [
+    'thailand', 'nepal', 'india', 'malaysia', 'singapore', 'indonesia', 'bali',
+    'dubai', 'uae', 'abu dhabi', 'saudi', 'makkah', 'madinah', 'turkey', 'istanbul',
+    'maldives', 'sri lanka', 'bhutan', 'vietnam', 'cambodia', 'china', 'hong kong',
+    'japan', 'korea', 'egypt', 'qatar', 'bahrain', 'kuwait', 'oman', 'europe',
+    'uk', 'london', 'usa', 'america', 'canada', 'australia',
+];
+
+const inferLocationType = (text: string): 'Domestic' | 'International' => {
+    const t = (text || '').toLowerCase();
+    if (t.includes('bangladesh')) return 'Domestic';
+    return FOREIGN_MARKERS.some((c) => t.includes(c)) ? 'International' : 'Domestic';
+};
+
+/**
+ * One-time, idempotent backfill: any tour saved before locationType was
+ * persisted has it null, which breaks the Domestic/International filter. This
+ * fills those in (inferring from destination/title). Called once on server
+ * startup, so a deploy self-heals the data with no manual migration step.
+ * Silent and non-fatal — a failure here must never stop the server booting.
+ */
+const backfillLocationType = async (): Promise<void> => {
+    try {
+        const tours = await Tour.find({
+            $or: [
+                { locationType: { $exists: false } },
+                { locationType: null },
+                { locationType: '' },
+            ],
+        }).select('title destination destinationBn locationType');
+
+        if (!tours.length) return;
+
+        for (const tour of tours) {
+            const hint = `${tour.destination || ''} ${(tour as any).destinationBn || ''} ${tour.title || ''}`;
+            tour.locationType = inferLocationType(hint);
+            await tour.save();
+        }
+        console.log(`🧭 Backfilled locationType on ${tours.length} tour(s).`);
+    } catch (err) {
+        console.error('locationType backfill skipped:', err instanceof Error ? err.message : err);
+    }
+};
+
 export const TourService = {
     createTour,
     getAllTours,
@@ -214,4 +260,5 @@ export const TourService = {
     deleteTour,
     getActiveTours,
     getFeaturedTours,
+    backfillLocationType,
 };
