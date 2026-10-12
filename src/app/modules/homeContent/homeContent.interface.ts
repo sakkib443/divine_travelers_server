@@ -166,6 +166,23 @@ export interface IAboutCtaData {
     isActive: boolean;
 }
 
+// Gallery Item (Photo or Video in 8-slot mosaic layout)
+export interface IGalleryItem {
+    slot: number;
+    type: 'image' | 'video';
+    imageUrl: string;
+    youtubeUrl: string;
+    title?: IBilingualText;
+}
+
+export interface IGalleryData {
+    eyebrow: IBilingualText;
+    heading: IBilingualText;
+    description: IBilingualText;
+    items: IGalleryItem[];
+    isActive: boolean;
+}
+
 // Section types
 export type SectionName =
     | 'hero'
@@ -177,7 +194,9 @@ export type SectionName =
     | 'aboutFounder'
     | 'aboutTeam'
     | 'aboutWhy'
-    | 'aboutCta';
+    | 'aboutCta'
+    // Gallery
+    | 'gallery';
 
 // Main document
 export interface IHomeContent extends Document {
@@ -191,7 +210,8 @@ export interface IHomeContent extends Document {
         | IAboutFounderData
         | IAboutTeamData
         | IAboutWhyData
-        | IAboutCtaData;
+        | IAboutCtaData
+        | IGalleryData;
     createdAt: Date;
     updatedAt: Date;
 }

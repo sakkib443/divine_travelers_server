@@ -62,6 +62,8 @@ const homeContentSchema = new Schema<IHomeContent, HomeContentModel>(
                 'hero', 'services', 'about', 'whyChooseUs', 'noticeBoard',
                 // About page
                 'aboutFounder', 'aboutTeam', 'aboutWhy', 'aboutCta',
+                // Gallery
+                'gallery',
             ],
         },
         data: { type: Schema.Types.Mixed, required: true },

@@ -199,6 +199,74 @@ const DEFAULTS: Record<SectionName, any> = {
         button2Link: '/tour',
         isActive: true,
     },
+    // ─── Photo & Video Gallery ─────────────────────────────────────────
+    gallery: {
+        isActive: true,
+        eyebrow: { en: 'Photo & Video Gallery', bn: 'ফটো ও ভিডিও গ্যালারি' },
+        heading: { en: 'Moments Captured Around The World', bn: 'বিশ্বজুড়ে আমাদের স্মরণীয় মুহূর্তগুলো' },
+        description: {
+            en: 'Explore our journey through captivating moments and real traveler experiences.',
+            bn: 'মনোমুগ্ধকর মুহূর্ত এবং ভ্রমণকারীদের বাস্তব অভিজ্ঞতার মধ্য দিয়ে আমাদের যাত্রা ঘুরে দেখুন।',
+        },
+        items: [
+            {
+                slot: 1,
+                type: 'image',
+                imageUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
+                youtubeUrl: '',
+                title: { en: 'City Lights & Memories', bn: 'শহরের আলো ও স্মৃতি' },
+            },
+            {
+                slot: 2,
+                type: 'image',
+                imageUrl: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80',
+                youtubeUrl: '',
+                title: { en: 'Mountain Peak Explorers', bn: 'পাহাড়চূড়ার রোমাঞ্চ' },
+            },
+            {
+                slot: 3,
+                type: 'image',
+                imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+                youtubeUrl: '',
+                title: { en: 'Golden Hour Sunset', bn: 'স্বর্ণালী সূর্যাস্ত' },
+            },
+            {
+                slot: 4,
+                type: 'image',
+                imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+                youtubeUrl: '',
+                title: { en: 'Traveler Portrait', bn: 'ভ্রমণকারীর মুখচ্ছবি' },
+            },
+            {
+                slot: 5,
+                type: 'image',
+                imageUrl: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80',
+                youtubeUrl: '',
+                title: { en: 'Scenic Reflections', bn: 'প্রকৃতির মনোরম দৃশ্য' },
+            },
+            {
+                slot: 6,
+                type: 'image',
+                imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
+                youtubeUrl: '',
+                title: { en: 'Majestic Horizons', bn: 'দিগন্তবিস্তৃত মায়া' },
+            },
+            {
+                slot: 7,
+                type: 'image',
+                imageUrl: 'https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?auto=format&fit=crop&w=800&q=80',
+                youtubeUrl: '',
+                title: { en: 'Urban Adventures', bn: 'শহুরে অভিযান' },
+            },
+            {
+                slot: 8,
+                type: 'image',
+                imageUrl: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80',
+                youtubeUrl: '',
+                title: { en: 'Journey of a Lifetime', bn: 'স্মরণীয় এক জীবনযাত্রা' },
+            },
+        ],
+    },
 };
 
 // ─── Field whitelists (per section) ───────────────────────────────────
@@ -217,6 +285,7 @@ const NOTICE_ITEM_FIELDS = ['en', 'bn'] as const;
 const ABOUT_FEATURE_FIELDS = ['icon', 'value', 'title', 'subtitle', 'order'] as const;
 const TEAM_MEMBER_FIELDS = ['name', 'role', 'photo', 'order'] as const;
 const ABOUT_VALUE_FIELDS = ['icon', 'title', 'description', 'order'] as const;
+const GALLERY_ITEM_FIELDS = ['slot', 'type', 'imageUrl', 'youtubeUrl', 'title'] as const;
 
 // One background picture behind the hero
 const HERO_SLIDE_FIELDS = ['image', 'order'] as const;
@@ -260,6 +329,10 @@ const SECTION_FIELDS: Record<SectionName, readonly string[]> = {
     aboutCta: [
         'heading', 'description', 'button1Text', 'button1Link',
         'button2Text', 'button2Link', 'isActive',
+    ],
+    // ─── Photo & Video Gallery ─────────────────────────────────────────
+    gallery: [
+        'eyebrow', 'heading', 'description', 'items', 'isActive',
     ],
 };
 
@@ -320,6 +393,16 @@ const sanitizeSectionData = (section: SectionName, input: any): Record<string, a
     if (section === 'aboutWhy' && data.cards !== undefined) {
         data.cards = pickItems(data.cards, ABOUT_VALUE_FIELDS)
             .map((c, i) => ({ ...c, order: i + 1 }));
+    }
+    if (section === 'gallery' && data.items !== undefined) {
+        data.items = pickItems(data.items, GALLERY_ITEM_FIELDS)
+            .map((item, i) => ({
+                ...item,
+                slot: typeof item.slot === 'number' ? item.slot : i + 1,
+                type: item.type === 'video' ? 'video' : 'image',
+                imageUrl: item.imageUrl || '',
+                youtubeUrl: item.youtubeUrl || '',
+            }));
     }
 
     return data;
