@@ -1,6 +1,6 @@
 import { Model, Types } from 'mongoose';
 
-export type TBookingType = 'tour' | 'hajj';
+export type TBookingType = 'tour' | 'hajj' | 'custom';
 export type TBookingStatus = 'pending' | 'processing' | 'confirmed' | 'cancelled' | 'rejected';
 export type TPaymentMethod = 'cash' | 'bkash' | 'nagad' | 'rocket' | 'card' | 'bank' | 'other';
 export type TPaymentStatus = 'unpaid' | 'partial' | 'paid' | 'refunded';

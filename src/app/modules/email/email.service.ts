@@ -321,6 +321,7 @@ const bookingTypeLabel = (type?: string): string => {
     const map: Record<string, string> = {
         tour: 'Tour',
         hajj: 'Hajj / Umrah',
+        custom: 'Custom Tour',
         study: 'Study',
     };
     return map[(type || '').toLowerCase()] || (type ? type : 'Service');

@@ -6,7 +6,7 @@ import { z } from 'zod';
 
 const createBookingSchema = z.object({
     body: z.object({
-        type: z.enum(['tour', 'hajj'], {
+        type: z.enum(['tour', 'hajj', 'custom'], {
             required_error: 'Booking type is required',
         }),
         serviceName: z
@@ -16,13 +16,11 @@ const createBookingSchema = z.object({
         name: z
             .string({ required_error: 'Name is required' })
             .min(1, 'Name is required'),
-        email: z
-            .string({ required_error: 'Email is required' })
-            .email('A valid email is required'),
+        email: z.string().optional().default(''),
         phone: z
             .string({ required_error: 'Phone is required' })
             .min(1, 'Phone is required'),
-        details: z.record(z.union([z.string(), z.number(), z.boolean()])).optional(),
+        details: z.record(z.any()).optional(),
     }),
 });
 

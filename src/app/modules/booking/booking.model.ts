@@ -45,7 +45,7 @@ const bookingSchema = new Schema<IBooking, BookingModel>(
         user: { type: Schema.Types.ObjectId, ref: 'User' },
         type: {
             type: String,
-            enum: ['tour', 'hajj'],
+            enum: ['tour', 'hajj', 'custom'],
             required: true,
         },
 
@@ -56,7 +56,7 @@ const bookingSchema = new Schema<IBooking, BookingModel>(
         serviceId: { type: String },
 
         name: { type: String, required: true, trim: true },
-        email: { type: String, required: true, trim: true, lowercase: true },
+        email: { type: String, trim: true, lowercase: true, default: '' },
         phone: { type: String, required: true, trim: true },
 
         details: { type: Schema.Types.Mixed, default: {} },

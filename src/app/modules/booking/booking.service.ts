@@ -64,28 +64,34 @@ const createBooking = async (userId: string | null, payload: Record<string, unkn
 
     const bookingUserId: string | null = userId;
 
-    // Pre-fill the quoted amount from the service's advertised price.
+    // Pre-fill the quoted amount from the service's advertised price or custom budget.
     const priced = await resolveServicePrice(
         payload.type,
         payload.serviceId,
         (payload.details as Record<string, unknown> | undefined)?.packageType,
     );
 
+    const customBudget = Number((payload.details as Record<string, unknown> | undefined)?.budget) || Number(payload.amount) || 0;
+
     const data: Record<string, unknown> = {
         type: payload.type,
         serviceName: payload.serviceName,
         serviceId: payload.serviceId,
         name: payload.name,
-        email: payload.email,
+        email: payload.email || 'guest@divinetravellers.com',
         phone: payload.phone,
         details: payload.details,
         trackingId,
         statusHistory: [{ status: 'pending', note: 'Booking received', at: new Date() }],
-        ...(priced && {
+        ...(priced ? {
             amount: priced.amount,
             dueAmount: priced.amount,
             ...(priced.currency && { currency: priced.currency }),
-        }),
+        } : customBudget > 0 ? {
+            amount: customBudget,
+            dueAmount: customBudget,
+            currency: 'BDT',
+        } : {}),
         ...(bookingUserId && { user: bookingUserId }),
     };
     const booking = await Booking.create(data);
